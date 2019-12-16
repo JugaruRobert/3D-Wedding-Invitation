@@ -1,0 +1,78 @@
+.invite-container {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-envelope {
+    width: 800px;
+    height: 300px;
+    background-image: url("../Images/plicfata.PNG");
+    background-repeat: no-repeat;
+    background-size: 800px 300px;
+    z-index:10
+}
+
+.back-envelope {
+    width: 800px;
+    height: 300px;
+    z-index: 1;
+    position: absolute;
+    background-image: url("../Images/plicspate.PNG");
+    background-repeat: no-repeat;
+    background-size: 800px 300px;
+}
+
+.interior-border {
+    width: 800px;
+    height: 90px;
+    position: absolute;
+    z-index: 3;
+    background-image: url("../Images/bandainterior.PNG");
+    background-repeat: no-repeat;
+    background-size: 800px 90px;
+    margin-top: 105px;
+}
+
+.ticket {
+    width: 750px;
+    height: 270px;
+    position: absolute;
+    z-index: 2;
+    background-image: url("../Images/biletfata.PNG");
+    background-repeat: no-repeat;
+    background-size: 750px 270px;
+}
+
+.open{
+    animation: flipOpen 1.1s ease-in forwards ;
+ }
+
+.close{
+    animation: flipClose 1.1s ease-in forwards;
+ }
+
+ @keyframes flipOpen{
+	0%{
+		transform: rotateX(0deg);
+		transform-origin:center top;
+	  }
+	100%{
+		transform:rotateX(180deg);
+        transform-origin:center top;
+	  }
+  }
+@keyframes flipClose{
+	0%{
+		transform: rotateX(180deg);
+		transform-origin:center top;
+	  }
+	100%{
+		transform:rotateX(0deg);
+        transform-origin:center top;
+	  }
+  }
