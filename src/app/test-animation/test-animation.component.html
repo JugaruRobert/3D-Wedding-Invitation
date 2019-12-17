@@ -1,9 +1,25 @@
 <div class="invite-container">
-    <div class="top-envelope" 
-        (click)="flipEnvelope()"
-        [ngClass]="isOpened ? 'open' : 'close'">
-    </div>
-    <div class="back-envelope"></div>
-    <div class="interior-border"></div>
-    <div class="ticket"></div>
-</div>
+    <ngx-flip [flip]="flipDiv" class="flip-card-inner">
+        <div front class="flip-card-front">
+            <div class="top-envelope" 
+                (click)="openEnvelope()"
+                [ngClass]="isOpened ? 'open' : 'close'">
+            </div> 
+            <div class="back-top-envelope"></div>
+            <div class="interior-border"></div>
+            <div class="ticket"
+                (click)="openTicket()" 
+                [ngClass]="isTicketOpened ? 'ticket-open' : 'ticket-close'" >
+            </div>  
+        </div>
+        <div back class="flip-card-back">
+            <div class="back-envelope"></div>
+        </div>
+    </ngx-flip>
+</div> 
+
+<button mat-icon-button class="flipButton" (click) = "onFlipClick()">
+    <mat-icon>favorite</mat-icon>
+</button>
+
+

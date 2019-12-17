@@ -6,6 +6,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: transparent;
+}
+
+.back-envelope {
+    width: 800px;
+    height: 300px;
+    background-image: url("../Images/plic-spate.PNG");
+    background-repeat: no-repeat;
+    background-size: 800px 300px;
+    position: absolute;
+    z-index:10;
+    perspective: 1800px;
+    filter: drop-shadow(-20px -20px 4px grey);
+    transform: rotate(180deg);
 }
 
 .top-envelope {
@@ -14,17 +28,20 @@
     background-image: url("../Images/plicfata.PNG");
     background-repeat: no-repeat;
     background-size: 800px 300px;
-    z-index:10
+    position: absolute;
+    z-index:10;
+    filter: drop-shadow(20px 20px 4px grey);
 }
 
-.back-envelope {
+.back-top-envelope {
     width: 800px;
     height: 300px;
     z-index: 1;
     position: absolute;
-    background-image: url("../Images/plicspate.PNG");
+    background-image: url("../Images/plic-spate-sus.PNG");
     background-repeat: no-repeat;
     background-size: 800px 300px;
+    filter: drop-shadow(20px 20px 4px grey);
 }
 
 .interior-border {
@@ -35,7 +52,8 @@
     background-image: url("../Images/bandainterior.PNG");
     background-repeat: no-repeat;
     background-size: 800px 90px;
-    margin-top: 105px;
+    margin-top: 210px;
+    filter: drop-shadow(0px 0px 5px #413947);
 }
 
 .ticket {
@@ -46,6 +64,8 @@
     background-image: url("../Images/biletfata.PNG");
     background-repeat: no-repeat;
     background-size: 750px 270px;
+    margin-left: 23px;
+    margin-top: 13px;
 }
 
 .open{
@@ -60,7 +80,7 @@
 	0%{
 		transform: rotateX(0deg);
 		transform-origin:center top;
-	  }
+    }
 	100%{
 		transform:rotateX(180deg);
         transform-origin:center top;
@@ -69,10 +89,64 @@
 @keyframes flipClose{
 	0%{
 		transform: rotateX(180deg);
-		transform-origin:center top;
-	  }
+        transform-origin:center top;
+    }
 	100%{
 		transform:rotateX(0deg);
         transform-origin:center top;
-	  }
+	}
   }
+
+.flip-card-inner {
+    position: relative;
+    width: 800px;
+    height: 300px;
+    transform-style: preserve-3d;
+}
+
+.flip-card-back {
+    rotate: 180;
+}  
+
+.flipButton {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 105px;
+    left: 906px;
+}
+
+.ticket-open{
+    animation: openTicket 1.1s ease-in forwards ;
+ }
+
+// .close{
+//     animation: flipClose 1.1s ease-in forwards;
+//  }
+
+ @keyframes openTicket{
+	0% {
+        top:0%;
+    }
+    90% {
+        top: -25%;
+        z-index:8;
+        filter: drop-shadow(20px 20px 10px #413947);
+    }
+	100%{
+        margin-bottom: 0%;
+        z-index:8;
+        filter: drop-shadow(20px 20px 10px #413947);
+	}
+  }
+
+// @keyframes flipClose{
+// 	0%{
+// 		transform: rotateX(180deg);
+//         transform-origin:center top;
+//     }
+// 	100%{
+// 		transform:rotateX(0deg);
+//         transform-origin:center top;
+// 	}
+//   }
