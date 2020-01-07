@@ -1,4 +1,7 @@
-<div class="container">
+<div
+  class="container"
+  [ngClass]="isOpened ? 'open-envelope' : 'close-envelope'"
+>
   <div class="invite-container">
     <ngx-flip [flip]="flipDiv" class="flip-card-inner">
       <div front class="flip-card-front">
@@ -7,13 +10,14 @@
           (click)="openEnvelope()"
           [ngClass]="isOpened ? 'open' : 'close'"
         ></div>
-        <div class="back-top-envelope"></div>
-        <div class="interior-border"></div>
-        <div
-          class="ticket"
-          (click)="openTicket()"
-          [ngClass]="isTicketOpened ? 'ticket-open' : 'ticket-close'"
-        ></div>
+        <div class="back-top-envelope">
+          <div class="interior-border"></div>
+          <div
+            class="ticket"
+            (click)="openTicket()"
+            [ngClass]="isTicketOpened ? 'ticket-open' : 'ticket-close'"
+          ></div>
+        </div>
       </div>
       <div back class="flip-card-back">
         <div class="back-envelope"></div>

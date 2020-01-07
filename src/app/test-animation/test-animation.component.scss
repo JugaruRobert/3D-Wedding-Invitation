@@ -1,4 +1,10 @@
 .container {
+  &.open-envelope {
+    animation: slideDown 1.1s ease-in forwards;
+  }
+  &.close-envelope {
+    animation: slideUp 1.1s ease-in forwards;
+  }
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -18,13 +24,8 @@
 }
 
 .back-envelope {
-  width: 80vw;
-  height: 30vh;
-  max-width: 800px;
-  max-height: 300px;
   background-image: url("../Images/plic-spate.PNG");
   background-repeat: no-repeat;
-  background-size: 80vw 30vh;
   position: absolute;
   z-index: 10;
   perspective: 1800px;
@@ -33,57 +34,89 @@
 }
 
 .top-envelope {
-  width: 80vw;
-  height: 30vh;
-  max-width: 800px;
-  max-height: 300px;
   background-image: url("../Images/plicfata.PNG");
   background-repeat: no-repeat;
-  background-size: 80vw 30vh;
   position: absolute;
   z-index: 10;
   filter: drop-shadow(20px 20px 4px grey);
 }
 
 .back-top-envelope {
-  width: 80vw;
-  height: 30vh;
-  max-width: 800px;
-  max-height: 300px;
   z-index: 1;
   position: absolute;
   background-image: url("../Images/plic-spate-sus.PNG");
   background-repeat: no-repeat;
-  background-size: 80vw 30vh;
   filter: drop-shadow(20px 20px 4px grey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (min-width: 900px) {
+  .back-envelope,
+  .top-envelope,
+  .back-top-envelope,
+  .flip-card-inner {
+    width: 800px;
+    height: 300px;
+    background-size: 800px 300px;
+  }
+
+  .interior-border {
+    width: 800px;
+    height: 90px;
+    background-size: 800px 90px;
+  }
+
+  .ticket {
+    width: 750px;
+    height: 270px;
+    background-size: 750px 270px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .back-envelope,
+  .top-envelope,
+  .back-top-envelope,
+  .flip-card-inner {
+    width: 80vw;
+    height: calc(80vw * 0.37);
+    background-size: 80vw calc(80vw * 0.37);
+  }
+
+  .interior-border {
+    width: 80vw;
+    height: calc(80vw * 0.1);
+    background-size: 80vw calc(80vw * 0.1);
+  }
+
+  .ticket {
+    width: 75vw;
+    height: calc(75vw * 0.37);
+    background-size: 75vw calc(75vw * 0.37);
+  }
 }
 
 .interior-border {
-  width: 80vw;
-  height: 9vh;
-  max-width: 800px;
-  max-height: 90px;
   position: absolute;
+  bottom: 0;
   z-index: 3;
   background-image: url("../Images/bandainterior.PNG");
   background-repeat: no-repeat;
-  background-size: 80vw 9vh;
-  margin-top: 210px;
   filter: drop-shadow(0px 0px 5px #413947);
 }
 
 .ticket {
-  width: 75vw;
-  height: 27vh;
-  max-width: 750px;
-  max-height: 270px;
-  position: absolute;
   z-index: 2;
   background-image: url("../Images/biletfata.PNG");
   background-repeat: no-repeat;
-  background-size: 75vw 27vh;
-  margin-left: 23px;
-  margin-top: 13px;
+  position: absolute;
+}
+
+.flip-card-inner {
+  position: relative;
+  transform-style: preserve-3d;
 }
 
 .open {
@@ -92,6 +125,24 @@
 
 .close {
   animation: flipClose 1.1s ease-in forwards;
+}
+
+@keyframes slideDown {
+  0% {
+    margin-top: 0;
+  }
+  100% {
+    margin-top: 5vh;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    margin-top: 5vh;
+  }
+  100% {
+    margin-top: 0;
+  }
 }
 
 @keyframes flipOpen {
@@ -109,6 +160,7 @@
     background-image: url("../Images/plic-spate-sus.PNG");
   }
 }
+
 @keyframes flipClose {
   0% {
     transform: rotateX(180deg);
@@ -125,15 +177,6 @@
   }
 }
 
-.flip-card-inner {
-  position: relative;
-  width: 80vw;
-  height: 30vh;
-  max-width: 800px;
-  max-height: 300px;
-  transform-style: preserve-3d;
-}
-
 .flip-card-back {
   rotate: 180;
 }
@@ -146,10 +189,6 @@
 .ticket-open {
   animation: openTicket 1.1s ease-in forwards;
 }
-
-// .close{
-//     animation: flipClose 1.1s ease-in forwards;
-//  }
 
 @keyframes openTicket {
   0% {
@@ -167,13 +206,6 @@
   }
 }
 
-// @keyframes flipClose{
-// 	0%{
-// 		transform: rotateX(180deg);
-//         transform-origin:center top;
-//     }
-// 	100%{
-// 		transform:rotateX(0deg);
-//         transform-origin:center top;
-// 	}
-//   }
+mat-icon {
+  color: #423b49;
+}
