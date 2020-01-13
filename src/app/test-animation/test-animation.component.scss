@@ -40,6 +40,7 @@
   position: absolute;
   z-index: 10;
   filter: drop-shadow(20px 20px 4px grey);
+  cursor: pointer;
 }
 
 .back-top-envelope {
@@ -121,11 +122,11 @@
 }
 
 .open {
-  animation: flipOpen 1.1s ease-in forwards;
+  animation: flipOpen 1s ease-in forwards alternate;
 }
 
 .close {
-  animation: flipClose 1.1s ease-in forwards;
+  animation: flipClose 1s ease-in forwards alternate;
 }
 
 @keyframes slideDown {
@@ -152,7 +153,11 @@
     transform-origin: center top;
     background-image: url("../Images/plicfata.PNG");
   }
-  50% {
+  60% {
+
+    background-image: url("../Images/plicfata.PNG");
+  }
+  70% {
     background-image: url("../Images/plic-spate-sus.PNG");
   }
   100% {
@@ -168,8 +173,11 @@
     transform-origin: center top;
     background-image: url("../Images/plic-spate-sus.PNG");
   }
-  50% {
+  60% {
     background-image: url("../Images/plic-spate-sus.PNG");
+  }
+  70% {
+    background-image: url("../Images/plicfata.PNG");
   }
   100% {
     transform: rotateX(0deg);
