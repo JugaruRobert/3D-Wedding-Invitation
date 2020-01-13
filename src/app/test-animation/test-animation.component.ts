@@ -1,4 +1,11 @@
-import { Component, OnInit } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  ElementRef,
+  AfterViewInit
+} from "@angular/core";
+import { FlipModule, FlipComponent } from "ngx-flip";
 
 @Component({
   selector: "app-test-animation",
@@ -6,16 +13,16 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./test-animation.component.scss"]
 })
 export class TestAnimationComponent implements OnInit {
-  isOpened = false;
-  flipDiv = true;
-  flipTicket = false;
-  isTicketOpened = false;
+  isOpened: boolean = null;
+  flipDiv: boolean = null;
+  flipTicket: boolean = null;
+  isTicketOpened: boolean = null;
 
   constructor() {}
 
-  ngOnInit() {
-    this.isOpened = false;
-  }
+  ngOnInit() {}
+
+  ngAfterViewInit() {}
 
   toggleEnvelope() {
     if (this.isTicketOpened) {
