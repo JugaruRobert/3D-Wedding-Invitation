@@ -15,11 +15,18 @@
           [ngClass]="isTicketOpened ? 'open-back-top ' : 'close-back-top'"
         >
           <div class="interior-border"></div>
-          <div
-            class="ticket"
-            (click)="toggleTicket()"
+          <ngx-flip
+            [flip]="flipTicket"
+            class="flip-ticket"
             [ngClass]="isTicketOpened ? 'ticket-open' : 'ticket-close'"
-          ></div>
+            (click)="toggleTicket()"
+          >
+            <div front class="flip-ticket-content">
+              <div class="ticket ticket-front"></div>
+            </div>
+            <div back class="flip-ticket-content">
+              <div class="ticket ticket-back"></div></div
+          ></ngx-flip>
         </div>
       </div>
       <div back class="flip-card-back">

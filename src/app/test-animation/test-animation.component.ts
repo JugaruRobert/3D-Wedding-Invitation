@@ -1,12 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import {
-  trigger,
-  transition,
-  animate,
-  style,
-  keyframes,
-  state
-} from "@angular/animations";
 
 @Component({
   selector: "app-test-animation",
@@ -16,6 +8,7 @@ import {
 export class TestAnimationComponent implements OnInit {
   isOpened = false;
   flipDiv = true;
+  flipTicket = false;
   isTicketOpened = false;
 
   constructor() {}
@@ -34,8 +27,13 @@ export class TestAnimationComponent implements OnInit {
   }
 
   onFlipClick() {
-    if (this.isOpened) this.isOpened = false;
-    this.flipDiv = !this.flipDiv;
+    if (this.isOpened) {
+      if (this.isTicketOpened) this.flipTicket = !this.flipTicket;
+      else {
+        this.toggleEnvelope();
+        setTimeout(() => (this.flipDiv = !this.flipDiv), 1300);
+      }
+    } else this.flipDiv = !this.flipDiv;
   }
 
   toggleTicket() {
