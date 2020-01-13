@@ -64,11 +64,11 @@
 }
 
 .open {
-  animation: flipOpen 1.1s ease-in forwards;
+  animation: flipOpen 1s ease-in forwards alternate;
 }
 
 .close {
-  animation: flipClose 1.1s ease-in forwards;
+  animation: flipClose 1s ease-in forwards alternate;
 }
 
 @keyframes flipOpen {
@@ -212,14 +212,6 @@
 
 .ticket-close {
   animation: closeTicket 1.1s ease-in forwards;
-}
-
-.open {
-  animation: flipOpen 1s ease-in forwards alternate;
-}
-
-.close {
-  animation: flipClose 1s ease-in forwards alternate;
 }
 
 @keyframes openTicket {
