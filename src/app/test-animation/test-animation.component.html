@@ -10,7 +10,10 @@
           (click)="openEnvelope()"
           [ngClass]="isOpened ? 'open' : 'close'"
         ></div>
-        <div class="back-top-envelope">
+        <div
+          class="back-top-envelope"
+          [ngClass]="isTicketOpened ? 'open-back-top ' : 'close-back-top'"
+        >
           <div class="interior-border"></div>
           <div
             class="ticket"
