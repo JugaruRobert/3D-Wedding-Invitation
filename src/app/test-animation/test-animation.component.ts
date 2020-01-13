@@ -24,8 +24,13 @@ export class TestAnimationComponent implements OnInit {
     this.isOpened = false;
   }
 
-  openEnvelope() {
-    this.isOpened = !this.isOpened;
+  toggleEnvelope() {
+    if (this.isTicketOpened) {
+      this.isTicketOpened = false;
+      setTimeout(() => (this.isOpened = !this.isOpened), 1000);
+    } else {
+      this.isOpened = !this.isOpened;
+    }
   }
 
   onFlipClick() {
@@ -33,7 +38,7 @@ export class TestAnimationComponent implements OnInit {
     this.flipDiv = !this.flipDiv;
   }
 
-  openTicket() {
+  toggleTicket() {
     this.isTicketOpened = !this.isTicketOpened;
   }
 }

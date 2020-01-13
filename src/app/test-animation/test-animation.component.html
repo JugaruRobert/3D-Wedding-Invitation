@@ -7,7 +7,7 @@
       <div front class="flip-card-front">
         <div
           class="top-envelope"
-          (click)="openEnvelope()"
+          (click)="toggleEnvelope()"
           [ngClass]="isOpened ? 'open' : 'close'"
         ></div>
         <div
@@ -17,7 +17,7 @@
           <div class="interior-border"></div>
           <div
             class="ticket"
-            (click)="openTicket()"
+            (click)="toggleTicket()"
             [ngClass]="isTicketOpened ? 'ticket-open' : 'ticket-close'"
           ></div>
         </div>
