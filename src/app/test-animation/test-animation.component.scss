@@ -193,8 +193,11 @@
   position: relative;
   z-index: 11;
 
-  &.can-hover-ticket:hover {
-    transform: translateY(-5%);
+  &.can-hover-ticket {
+    transition: transform 1s;
+    &:hover {
+      transform: translateY(-5%);
+    }
   }
 
   .flip-ticket-content {
