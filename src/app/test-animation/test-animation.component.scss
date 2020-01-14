@@ -61,7 +61,7 @@
   z-index: 10;
   cursor: pointer;
 
-  transition: transform 1s;
+  transition: transform 1s, box-shadow 1s;
   &:hover {
     transform: rotateX(20deg) translateY(-5%);
     box-shadow: 0 13px 10px -6px black;
@@ -73,7 +73,7 @@
 }
 
 .close {
-  animation: flipClose 1s ease-in forwards alternate;
+  animation: flipClose 1s ease-in none alternate;
 }
 
 @keyframes flipOpen {
