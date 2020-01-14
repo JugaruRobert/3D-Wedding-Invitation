@@ -59,7 +59,7 @@
   background-repeat: no-repeat;
   position: absolute;
   z-index: 10;
-  cursor: pointer;
+  cursor: url('../../heart.png'), auto;
 
   transition: transform 1s;
   &:hover {
@@ -216,7 +216,7 @@
   z-index: 11;
   background-repeat: no-repeat;
   position: absolute;
-  cursor: pointer;
+  cursor: url('../../heart.png'), auto;
   top: 0%;
 
   &.ticket-front {
