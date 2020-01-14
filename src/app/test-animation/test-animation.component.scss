@@ -64,6 +64,7 @@
   transition: transform 1s;
   &:hover {
     transform: rotateX(20deg) translateY(-5%);
+    box-shadow: 0 13px 10px -6px black;
   }
 }
 
