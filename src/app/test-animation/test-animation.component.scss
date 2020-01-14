@@ -133,7 +133,7 @@
     background-size: 800px 300px;
   }
 
-  .interior-border {
+  .interior-border-container {
     width: 800px;
     height: 90px;
     background-size: 800px 90px;
@@ -156,7 +156,7 @@
     background-size: 80vw calc(80vw * 0.37);
   }
 
-  .interior-border {
+  .interior-border-container {
     width: 80vw;
     height: calc(80vw * 0.1);
     background-size: 80vw calc(80vw * 0.1);
@@ -169,13 +169,21 @@
   }
 }
 
-.interior-border {
+.interior-border-container {
   position: absolute;
   bottom: 0;
   z-index: 12;
+  filter: drop-shadow(0px 0px 5px #413947);
+  overflow: hidden;
+}
+
+.interior-border {
   background-image: url("../Images/bandainterior.PNG");
   background-repeat: no-repeat;
-  filter: drop-shadow(0px 0px 5px #413947);
+  width: 100%;
+  height: 100%;
+  background-size: inherit;
+  transform: translateY(2px) rotate(0.3deg);
 }
 
 // Ticket
@@ -207,7 +215,7 @@
     background-image: url("../Images/biletfata.PNG");
   }
   &.ticket-back {
-    background-image: url("../Images/biletspate.PNG");
+    background-image: url("../Images/biletspate.png");
   }
 }
 
@@ -263,6 +271,7 @@
 .flipButton {
   width: 100px;
   height: 100px;
+  margin-top: 40px;
 }
 
 mat-icon {
