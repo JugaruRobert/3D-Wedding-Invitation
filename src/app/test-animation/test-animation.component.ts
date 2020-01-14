@@ -49,6 +49,8 @@ export class TestAnimationComponent implements OnInit {
 
   toggleTicket() {
     this.isTicketOpened = !this.isTicketOpened;
-    this.hoverTicket = !this.isTicketOpened;
+    this.isTicketOpened
+      ? (this.hoverTicket = false)
+      : setTimeout(() => (this.hoverTicket = true), 1300);
   }
 }
