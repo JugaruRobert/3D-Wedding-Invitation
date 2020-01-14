@@ -185,7 +185,7 @@
   position: relative;
   z-index: 11;
 
-  &:hover {
+  &.can-hover-ticket:hover {
     transform: translateY(-5%);
   }
 
@@ -213,9 +213,6 @@
 
 .ticket-open {
   animation: openTicket 1.1s ease-in forwards;
-  &:hover {
-    transform: none;
-  }
 }
 
 .ticket-close {

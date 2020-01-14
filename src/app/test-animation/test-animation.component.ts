@@ -17,6 +17,7 @@ export class TestAnimationComponent implements OnInit {
   flipDiv: boolean = null;
   flipTicket: boolean = null;
   isTicketOpened: boolean = null;
+  hoverTicket: boolean = null;
 
   constructor() {}
 
@@ -27,9 +28,12 @@ export class TestAnimationComponent implements OnInit {
   toggleEnvelope() {
     if (this.isTicketOpened) {
       this.isTicketOpened = false;
-      setTimeout(() => (this.isOpened = !this.isOpened), 1000);
+      setTimeout(() => (this.isOpened = !this.isOpened), 1100);
     } else {
       this.isOpened = !this.isOpened;
+      this.isOpened
+        ? setTimeout(() => (this.hoverTicket = true), 1000)
+        : (this.hoverTicket = false);
     }
   }
 
@@ -45,5 +49,6 @@ export class TestAnimationComponent implements OnInit {
 
   toggleTicket() {
     this.isTicketOpened = !this.isTicketOpened;
+    this.hoverTicket = !this.isTicketOpened;
   }
 }

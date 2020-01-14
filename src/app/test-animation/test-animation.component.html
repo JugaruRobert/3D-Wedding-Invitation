@@ -23,7 +23,8 @@
             class="flip-ticket"
             [ngClass]="{
               'ticket-open': isTicketOpened === true,
-              'ticket-close': isTicketOpened === false
+              'ticket-close': isTicketOpened === false,
+              'can-hover-ticket': hoverTicket === true
             }"
             (click)="toggleTicket()"
           >
