@@ -16,13 +16,7 @@
             close: isOpened === false
           }"
         ></div>
-        <div
-          class="back-top-envelope"
-          [ngClass]="{
-            'open-back-top ': isTicketOpened === true,
-            'close-back-top': isTicketOpened === false
-          }"
-        >
+        <div class="back-top-envelope">
           <div class="interior-border"></div>
           <ngx-flip
             [flip]="flipTicket"
