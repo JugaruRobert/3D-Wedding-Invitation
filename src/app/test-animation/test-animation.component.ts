@@ -1,11 +1,6 @@
 import {
   Component,
-  OnInit,
-  ViewChild,
-  ElementRef,
-  AfterViewInit
-} from "@angular/core";
-import { FlipModule, FlipComponent } from "ngx-flip";
+  OnInit} from "@angular/core";
 
 @Component({
   selector: "app-test-animation",
@@ -19,9 +14,13 @@ export class TestAnimationComponent implements OnInit {
   isTicketOpened: boolean = null;
   hoverTicket: boolean = null;
 
+  envelopeText: string = "";
+
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.envelopeText = location.pathname;
+  }
 
   ngAfterViewInit() {}
 

@@ -60,6 +60,9 @@
   position: absolute;
   z-index: 10;
   cursor: url("../Images/heart.png"), auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   transition: transform 1s, box-shadow 1s;
   &:hover {
@@ -117,6 +120,7 @@
 .flip-card-front {
   filter: drop-shadow(20px 20px 4px grey);
 }
+
 // Inside Envelope
 .back-top-envelope {
   z-index: 1;
@@ -190,6 +194,15 @@
   height: 100%;
   background-size: inherit;
   transform: translateY(2px) rotate(0.3deg);
+}
+
+.inviteText {
+  font-family: 'Parisienne', cursive;
+  font-size: 35px;
+  padding-bottom: 24px;
+  padding-right: 126px;
+  font-weight: 700;
+  text-transform: capitalize;
 }
 
 // Ticket

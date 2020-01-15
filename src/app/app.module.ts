@@ -8,11 +8,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { FlipModule } from 'ngx-flip';
+import { EnvelopeTextPipe } from './Utils/envelopeTextPipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestAnimationComponent
+    TestAnimationComponent,
+    EnvelopeTextPipe
   ],
   imports: [
     BrowserModule,
@@ -22,7 +24,7 @@ import { FlipModule } from 'ngx-flip';
     MatIconModule,
     FlipModule
   ],
-  providers: [],
+  providers: [EnvelopeTextPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
