@@ -68,6 +68,9 @@
   &:hover {
     transform: rotateX(20deg) translateY(-5%);
     box-shadow: 0 13px 10px -6px black;
+    .inviteText {
+      transform: rotateX(20deg) translateY(-5%);
+    }
   }
 }
 
@@ -198,11 +201,12 @@
 
 .inviteText {
   font-family: 'Parisienne', cursive;
-  font-size: 35px;
+  font-size: 40px;
   padding-bottom: 24px;
   padding-right: 126px;
-  font-weight: 700;
+  font-weight: 900;
   text-transform: capitalize;
+  transition: transform 1s;
 }
 
 // Ticket
@@ -227,9 +231,7 @@
 }
 
 .ticket {
-  z-index: 11;
   background-repeat: no-repeat;
-  position: absolute;
   cursor: url("../Images/heart.png"), auto;
   top: 0%;
 
