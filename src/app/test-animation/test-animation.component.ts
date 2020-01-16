@@ -1,11 +1,5 @@
-import {
-  Component,
-  OnInit,
-  ViewChild,
-  ElementRef,
-  AfterViewInit
-} from "@angular/core";
-import { FlipModule, FlipComponent } from "ngx-flip";
+import { Component, OnInit } from "@angular/core";
+import { EnvelopeTextPipe } from "../Utils/envelopeTextPipe";
 
 @Component({
   selector: "app-test-animation",
@@ -18,6 +12,11 @@ export class TestAnimationComponent implements OnInit {
   flipTicket: boolean = null;
   isTicketOpened: boolean = null;
   hoverTicket: boolean = null;
+  envelopeText: string = "";
+  envelopeTextFontSize: number = 40;
+
+  TEXT_BASE_LENGTH: number = 20;
+  TEXT_BASE_SIZE: number = 40;
 
   public clickHere = {
     clickHereEnvelope: 1,
@@ -49,6 +48,8 @@ export class TestAnimationComponent implements OnInit {
           : (this.clickHere[trigger] += 1);
       }
     }
+    this.envelopeText = location.pathname;
+    this.computeEnvelopeFontSize();
   }
 
   ngAfterViewInit() {}
@@ -105,5 +106,17 @@ export class TestAnimationComponent implements OnInit {
       : setTimeout(() => (this.hoverTicket = true), 1300);
     this.setClickHere("clickHereTopTicket", 2);
     this.setClickHere("clickHereTicket", 0);
+  }
+
+  computeEnvelopeFontSize() {
+    var envelopeTextPipe = new EnvelopeTextPipe();
+    var text = envelopeTextPipe.transform(location.pathname);
+    if (text.length <= this.TEXT_BASE_LENGTH)
+      this.envelopeTextFontSize = this.TEXT_BASE_SIZE;
+    else {
+      var textDifference = text.length - this.TEXT_BASE_LENGTH;
+      this.envelopeTextFontSize =
+        this.TEXT_BASE_SIZE - textDifference - textDifference / 2;
+    }
   }
 }

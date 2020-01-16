@@ -60,11 +60,57 @@
   position: absolute;
   z-index: 10;
   cursor: url("../Images/heart.png"), auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   transition: transform 1s, box-shadow 1s;
+  
   &:hover {
     transform: rotateX(20deg) translateY(-5%);
     box-shadow: 0 13px 10px -6px black;
+
+    .inviteText {
+      transform: rotateX(20deg) translateY(-5%);
+    }
+  }
+}
+
+.hideText {
+  animation: hideText 1s ease-in forwards alternate;
+}
+
+.showText {
+  animation: showText 1s ease-in none alternate;
+}
+
+@keyframes hideText {
+  0% {
+    visibility: visible;
+  }
+  50% {
+    visibility: visible;
+  }
+  55% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+@keyframes showText {
+  0% {
+    visibility: hidden;
+  }
+  60% {
+    visibility: hidden;
+  }
+  70% {
+    visibility: visible;
+  }
+  100% {
+    visibility: visible;
   }
 }
 
@@ -82,10 +128,10 @@
     transform-origin: center top;
     background-image: url("../Images/plicfata.PNG");
   }
-  60% {
+  58% {
     background-image: url("../Images/plicfata.PNG");
   }
-  70% {
+  63% {
     background-image: url("../Images/plic-spate-sus.PNG");
   }
   100% {
@@ -117,6 +163,7 @@
 .flip-card-front {
   filter: drop-shadow(20px 20px 4px grey);
 }
+
 // Inside Envelope
 .back-top-envelope {
   z-index: 1;
@@ -236,6 +283,16 @@
   transform: translateY(2px) rotate(0.3deg);
 }
 
+.inviteText {
+  font-family: 'Parisienne', cursive;
+  font-size: 40px;
+  padding-bottom: 24px;
+  padding-right: 126px;
+  font-weight: 900;
+  text-transform: capitalize;
+  transition: transform 1s;
+}
+
 // Ticket
 .flip-ticket {
   width: 100%;
@@ -258,9 +315,7 @@
 }
 
 .ticket {
-  z-index: 11;
   background-repeat: no-repeat;
-  position: absolute;
   cursor: url("../Images/heart.png"), auto;
   top: 0%;
 
