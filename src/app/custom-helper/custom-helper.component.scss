@@ -1,5 +1,5 @@
 %circle {
-  background-color: #423b49;
+  background-color: #f3f3f3;
   border-radius: 50%;
   position: absolute;
 }
@@ -14,7 +14,7 @@
   .plane {
     @extend %animation-set;
     animation-delay: 2s;
-    background-image: url("../Images/plane-good.png");
+    background-image: url("../Images/plane-light.png");
   }
   .circle1 {
     @extend %circle;
@@ -39,7 +39,7 @@
   .text {
     @extend %animation-set;
     animation-delay: 7s;
-    color: #423b49;
+    color: #f3f3f3;
     font-weight: 500;
     text-align: left;
   }

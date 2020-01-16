@@ -38,6 +38,7 @@ body {
 body {
   margin: 0;
   cursor: url("app/Images/plane.png"), auto;
+  overflow: hidden;
 }
 
 body:before {
@@ -57,7 +58,6 @@ body:before {
     top: 0;
     left: 0;
     opacity: 0.9;
-
 }
 
 html,
