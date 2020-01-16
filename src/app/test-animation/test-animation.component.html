@@ -6,6 +6,16 @@
   }"
 >
   <div class="invite-container">
+    <div class="click-here-container-envelope">
+      <app-custom-helper
+        [clickHere]="clickHere['clickHereTopEnvelope'] === 0"
+      ></app-custom-helper>
+    </div>
+    <div class="click-here-container-ticket">
+      <app-custom-helper
+        [clickHere]="clickHere['clickHereTopTicket'] === 0"
+      ></app-custom-helper>
+    </div>
     <ngx-flip [flip]="flipDiv" class="flip-card-inner">
       <div front class="flip-card-front">
         <div
@@ -50,7 +60,20 @@
     </ngx-flip>
   </div>
 
-  <button mat-icon-button class="flipButton" (click)="onFlipClick()">
+  <button
+    #toggleButton
+    mat-icon-button
+    class="flipButton"
+    (click)="onFlipClick()"
+  >
     <mat-icon>favorite</mat-icon>
+    <div class="click-here-container">
+      <app-custom-helper
+        [clickHere]="
+          clickHere['clickHereEnvelope'] === 0 ||
+          clickHere['clickHereTicket'] === 0
+        "
+      ></app-custom-helper>
+    </div>
   </button>
 </div>

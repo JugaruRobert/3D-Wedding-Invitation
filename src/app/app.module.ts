@@ -8,11 +8,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { FlipModule } from 'ngx-flip';
+import { CustomHelperComponent } from './custom-helper/custom-helper.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestAnimationComponent
+    TestAnimationComponent,
+    CustomHelperComponent
   ],
   imports: [
     BrowserModule,
