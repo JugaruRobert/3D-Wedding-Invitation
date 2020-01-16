@@ -15,7 +15,13 @@
             open: isOpened === true,
             close: isOpened === false
           }"
-        ><span class="inviteText">{{envelopeText | envelopeTextPipe}}</span></div>
+        ><span class="inviteText"           
+               [ngClass]="{
+                    hideText: isOpened === true,
+                    showText: isOpened === false
+                }"
+                [ngStyle]="{'font-size' : envelopeTextFontSize + 'px'}">
+            {{envelopeText | envelopeTextPipe}}</span></div>
         <div
           class="back-top-envelope"
           [ngClass]="{

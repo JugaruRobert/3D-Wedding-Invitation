@@ -8,7 +8,12 @@ export class EnvelopeTextPipe implements PipeTransform {
     if(pathname)
     {
         if(pathname.substr(0,9) == "/special/")
-            return pathname.substr(9, pathname.length).split("-").join(" ");
+        {
+          var resultText = pathname.toLowerCase().substr(9, pathname.length).split("-").join(" ");
+          if(resultText.length <= 42)
+              return resultText;
+          return guestNameMappings["defaultText"];
+        }
 
         var urlName = pathname.substr(1).toLowerCase();
         var nameMapping = guestNameMappings[urlName];

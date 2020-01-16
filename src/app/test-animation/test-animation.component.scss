@@ -65,12 +65,52 @@
   justify-content: center;
 
   transition: transform 1s, box-shadow 1s;
+  
   &:hover {
     transform: rotateX(20deg) translateY(-5%);
     box-shadow: 0 13px 10px -6px black;
+
     .inviteText {
       transform: rotateX(20deg) translateY(-5%);
     }
+  }
+}
+
+.hideText {
+  animation: hideText 1s ease-in forwards alternate;
+}
+
+.showText {
+  animation: showText 1s ease-in none alternate;
+}
+
+@keyframes hideText {
+  0% {
+    visibility: visible;
+  }
+  50% {
+    visibility: visible;
+  }
+  55% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+@keyframes showText {
+  0% {
+    visibility: hidden;
+  }
+  60% {
+    visibility: hidden;
+  }
+  70% {
+    visibility: visible;
+  }
+  100% {
+    visibility: visible;
   }
 }
 
@@ -88,10 +128,10 @@
     transform-origin: center top;
     background-image: url("../Images/plicfata.PNG");
   }
-  60% {
+  58% {
     background-image: url("../Images/plicfata.PNG");
   }
-  70% {
+  63% {
     background-image: url("../Images/plic-spate-sus.PNG");
   }
   100% {
