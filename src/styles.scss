@@ -38,21 +38,19 @@ body {
 body {
   margin: 0;
   cursor: url("app/Images/plane.png"), auto;
+  overflow: hidden;
 }
 
 body:before {
-    content: '';
-    background: linear-gradient(
-                     rgba(20,20,20, .65), 
-                     rgba(20,20,20, .65  )),
-                     url("./app/Images/background-purple.png");
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0.9;
-
+  content: "";
+  background: linear-gradient(rgba(20, 20, 20, 0.65), rgba(20, 20, 20, 0.65)),
+    url("./app/Images/background-black.png");
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.9;
 }
 
 html,

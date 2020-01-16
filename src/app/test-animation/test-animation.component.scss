@@ -65,7 +65,7 @@
   justify-content: center;
 
   transition: transform 1s, box-shadow 1s;
-  
+
   &:hover {
     transform: rotateX(20deg) translateY(-5%);
     box-shadow: 0 13px 10px -6px black;
@@ -284,7 +284,7 @@
 }
 
 .inviteText {
-  font-family: 'Parisienne', cursive;
+  font-family: "Parisienne", cursive;
   font-size: 40px;
   padding-bottom: 24px;
   padding-right: 126px;
@@ -384,7 +384,7 @@
 }
 
 mat-icon {
-  color: #423b49;
+  color: #f3f3f3;
 }
 
 .click-here-container {
