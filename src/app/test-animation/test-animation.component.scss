@@ -197,6 +197,20 @@
     height: 270px;
     background-size: 750px 270px;
   }
+
+  .click-here-container {
+    top: 58%;
+    left: 12%;
+  }
+
+  .click-here-container-envelope {
+    margin-left: -425px;
+    margin-top: 8%;
+  }
+  .click-here-container-ticket {
+    margin-left: -425px;
+    margin-top: 6%;
+  }
 }
 
 @media screen and (max-width: 900px) {
@@ -219,6 +233,36 @@
     width: 75vw;
     height: calc(75vw * 0.37);
     background-size: 75vw calc(75vw * 0.37);
+  }
+
+  .click-here-container {
+    top: 62%;
+    left: 27%;
+  }
+
+  .click-here-container-envelope {
+    margin-left: calc(80vw / 2 * (-1) - 12px);
+    margin-top: 12%;
+  }
+
+  .click-here-container-ticket {
+    margin-left: calc(80vw / 2 * (-1) - 12px);
+    margin-top: 7%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .click-here-container {
+    top: 61%;
+    left: 33%;
+  }
+  .click-here-container-envelope {
+    margin-left: calc(80vw / 2 * (-1) - 10px) !important;
+    margin-top: 12%;
+  }
+  .click-here-container-ticket {
+    margin-left: calc(80vw / 2 * (-1) - 10px) !important;
+    margin-top: 8%;
   }
 }
 
@@ -335,10 +379,19 @@
 .flipButton {
   width: 100px;
   height: 100px;
-  margin-top: 40px;
+  margin-top: -8px;
   cursor: url("../Images/heart.png"), auto;
 }
 
 mat-icon {
   color: #423b49;
+}
+
+.click-here-container {
+  position: absolute;
+}
+.click-here-container-envelope,
+.click-here-container-ticket {
+  transform: rotate(18deg);
+  position: absolute;
 }

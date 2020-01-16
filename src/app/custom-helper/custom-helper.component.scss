@@ -1,0 +1,179 @@
+%circle {
+  background-color: #423b49;
+  border-radius: 50%;
+  position: absolute;
+}
+
+%animation-set {
+  opacity: 0;
+  animation: fadeIn 2s ease-in forwards;
+}
+
+.click-here {
+  position: relative;
+  .plane {
+    @extend %animation-set;
+    animation-delay: 2s;
+    background-image: url("../Images/plane-good.png");
+  }
+  .circle1 {
+    @extend %circle;
+    @extend %animation-set;
+    animation-delay: 3s;
+  }
+  .circle2 {
+    @extend %circle;
+    @extend %animation-set;
+    animation-delay: 4s;
+  }
+  .circle3 {
+    @extend %circle;
+    @extend %animation-set;
+    animation-delay: 5s;
+  }
+  .circle4 {
+    @extend %circle;
+    @extend %animation-set;
+    animation-delay: 6s;
+  }
+  .text {
+    @extend %animation-set;
+    animation-delay: 7s;
+    color: #423b49;
+    font-weight: 500;
+    text-align: left;
+  }
+}
+
+.hide {
+  visibility: hidden;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .click-here {
+    width: 100px;
+    height: 89px;
+  }
+  .plane {
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+  }
+  .circle1,
+  .circle2,
+  .circle3,
+  .circle4 {
+    width: 7px;
+    height: 7px;
+  }
+  .circle1 {
+    left: -5px;
+    top: 20px;
+  }
+  .circle2 {
+    left: -8px;
+    top: 30px;
+  }
+  .circle3 {
+    top: 41px;
+    left: -6px;
+  }
+  .circle4 {
+    top: 49px;
+    left: 2px;
+  }
+  .text {
+    font-size: 14px;
+    line-height: 69px;
+    margin-left: 15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .click-here {
+    width: 82px;
+    height: 80px;
+  }
+  .plane {
+    background-size: 10px 10px;
+    width: 10px;
+    height: 10px;
+  }
+  .circle1,
+  .circle2,
+  .circle3,
+  .circle4 {
+    width: 4px;
+    height: 4px;
+  }
+  .circle1 {
+    left: -4px;
+    top: 13px;
+  }
+  .circle2 {
+    left: -7px;
+    top: 20px;
+  }
+  .circle3 {
+    top: 28px;
+    left: -6px;
+  }
+  .circle4 {
+    top: 35px;
+    left: 0px;
+  }
+  .text {
+    font-size: 11px;
+    line-height: 57px;
+    margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .click-here {
+    width: 60px;
+    height: 60px;
+  }
+  .plane {
+    background-size: 5px 5px;
+    width: 5px;
+    height: 5px;
+  }
+  .circle1,
+  .circle2,
+  .circle3,
+  .circle4 {
+    width: 2px;
+    height: 2px;
+  }
+  .circle1 {
+    left: -2px;
+    top: 6px;
+  }
+  .circle2 {
+    left: -4px;
+    top: 9.5px;
+  }
+  .circle3 {
+    top: 14px;
+    left: -3px;
+  }
+  .circle4 {
+    top: 17px;
+    left: 0px;
+  }
+  .text {
+    font-size: 8px;
+    line-height: 29px;
+    margin-left: 5px;
+  }
+}
