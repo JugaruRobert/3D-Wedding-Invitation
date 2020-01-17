@@ -10,6 +10,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { FlipModule } from "ngx-flip";
 import { CustomHelperComponent } from "./custom-helper/custom-helper.component";
 import { EnvelopeTextPipe } from "./Utils/envelopeTextPipe";
+import { MatTooltipModule } from "@angular/material/tooltip";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { EnvelopeTextPipe } from "./Utils/envelopeTextPipe";
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,
-    FlipModule
+    FlipModule,
+    MatTooltipModule
   ],
   providers: [EnvelopeTextPipe],
   bootstrap: [AppComponent]

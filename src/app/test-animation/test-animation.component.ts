@@ -14,6 +14,7 @@ export class TestAnimationComponent implements OnInit {
   hoverTicket: boolean = null;
   envelopeText: string = "";
   envelopeTextFontSize: number = 40;
+  showInvitation = true;
 
   TEXT_BASE_LENGTH: number = 20;
   TEXT_BASE_SIZE: number = 40;
@@ -28,8 +29,10 @@ export class TestAnimationComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.setClickHere("clickHereEnvelope", 0);
-    this.setClickHere("clickHereTopEnvelope", 0);
+    this.envelopeText = location.pathname;
+    this.computeEnvelopeFontSize();
+    setTimeout(() => this.setClickHere("clickHereEnvelope", 0), 5000);
+    setTimeout(() => this.setClickHere("clickHereTopEnvelope", 0), 5000);
   }
 
   setClickHere(trigger: string, value: number) {
@@ -48,8 +51,6 @@ export class TestAnimationComponent implements OnInit {
           : (this.clickHere[trigger] += 1);
       }
     }
-    this.envelopeText = location.pathname;
-    this.computeEnvelopeFontSize();
   }
 
   ngAfterViewInit() {}
@@ -118,5 +119,9 @@ export class TestAnimationComponent implements OnInit {
       this.envelopeTextFontSize =
         this.TEXT_BASE_SIZE - textDifference - textDifference / 2;
     }
+  }
+
+  toggleAll() {
+    this.showInvitation = !this.showInvitation;
   }
 }

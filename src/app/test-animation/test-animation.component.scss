@@ -395,3 +395,72 @@ mat-icon {
   transform: rotate(18deg);
   position: absolute;
 }
+
+.action-buttons {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  padding: 10px;
+  .action-button {
+    @media screen and (max-width: 660px) {
+      width: 20px;
+      height: 20px;
+      background-size: 20px 20px;
+    }
+    @media screen and (min-width: 660px) {
+      width: calc(100vw / 33);
+      height: calc(100vw / 33);
+      background-size: calc(100vw / 33) calc(100vw / 33);
+    }
+
+    cursor: url("../Images/heart.png"), auto;
+    &.background-flip {
+      background-image: url("../Images/background.png");
+      opacity: 0;
+      animation: fadeIn 1.5s ease-in forwards;
+      animation-delay: 2s;
+      z-index: 21;
+    }
+    &.location {
+      background-image: url("../Images/location.png");
+      margin-right: 15px;
+    }
+  }
+}
+
+.hide-all {
+  .action-buttons .location,
+  .invite-container,
+  .flipButton {
+    animation: fadeOut 1.5s ease-in forwards;
+  }
+}
+
+.show-all {
+  .action-buttons .location,
+  .invite-container,
+  .flipButton {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in forwards;
+    animation-delay: 2s;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

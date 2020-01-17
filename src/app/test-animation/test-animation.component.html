@@ -2,9 +2,28 @@
   class="container"
   [ngClass]="{
     'open-envelope': isOpened === true,
-    'close-envelope': isOpened === false
+    'close-envelope': isOpened === false,
+    'hide-all': !showInvitation,
+    'show-all': showInvitation
   }"
 >
+  <div class="action-buttons">
+    <a
+      href="https://goo.gl/maps/9QFmWcgbhuqZY3tf6"
+      target="_blank"
+      matTooltip="Locatie Restaurant"
+      matTooltipPosition="left"
+      ><div class="action-button location"></div
+    ></a>
+    <div
+      (click)="toggleAll()"
+      class="action-button background-flip"
+      matTooltip="{{
+        showInvitation ? 'Ascunde Invitatia' : 'Arata Invitatia'
+      }}"
+      matTooltipPosition="left"
+    ></div>
+  </div>
   <div class="invite-container">
     <div class="click-here-container-envelope">
       <app-custom-helper
@@ -25,13 +44,18 @@
             open: isOpened === true,
             close: isOpened === false
           }"
-        ><span class="inviteText"           
-               [ngClass]="{
-                    hideText: isOpened === true,
-                    showText: isOpened === false
-                }"
-                [ngStyle]="{'font-size' : envelopeTextFontSize + 'px'}">
-            {{envelopeText | envelopeTextPipe}}</span></div>
+        >
+          <span
+            class="inviteText"
+            [ngClass]="{
+              hideText: isOpened === true,
+              showText: isOpened === false
+            }"
+            [ngStyle]="{ 'font-size': envelopeTextFontSize + 'px' }"
+          >
+            {{ envelopeText | envelopeTextPipe }}</span
+          >
+        </div>
         <div
           class="back-top-envelope"
           [ngClass]="{
