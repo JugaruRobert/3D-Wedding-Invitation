@@ -3,7 +3,7 @@ import { NgModule } from "@angular/core";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { TestAnimationComponent } from "./test-animation/test-animation.component";
+import { WeddingInvitation } from "./wedding-invitation/wedding-invitation.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
@@ -15,7 +15,7 @@ import { MatTooltipModule } from "@angular/material/tooltip";
 @NgModule({
   declarations: [
     AppComponent,
-    TestAnimationComponent,
+    WeddingInvitation,
     CustomHelperComponent,
     EnvelopeTextPipe
   ],

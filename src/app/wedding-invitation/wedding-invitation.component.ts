@@ -2,11 +2,11 @@ import { Component, OnInit } from "@angular/core";
 import { EnvelopeTextPipe } from "../Utils/envelopeTextPipe";
 
 @Component({
-  selector: "app-test-animation",
-  templateUrl: "./test-animation.component.html",
-  styleUrls: ["./test-animation.component.scss"]
+  selector: "wedding-invitation",
+  templateUrl: "./wedding-invitation.component.html",
+  styleUrls: ["./wedding-invitation.component.scss"]
 })
-export class TestAnimationComponent implements OnInit {
+export class WeddingInvitation implements OnInit {
   isOpened: boolean = null;
   flipDiv: boolean = null;
   flipTicket: boolean = null;

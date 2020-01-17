@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { TestAnimationComponent } from './test-animation/test-animation.component';
+import { WeddingInvitation } from './wedding-invitation/wedding-invitation.component';
 
 
 const routes: Routes = [
-  { path: "**", component: TestAnimationComponent }
+  { path: "**", component: WeddingInvitation }
 ];
 
 @NgModule({

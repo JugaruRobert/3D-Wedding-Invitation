@@ -56,13 +56,7 @@
             {{ envelopeText | envelopeTextPipe }}</span
           >
         </div>
-        <div
-          class="back-top-envelope"
-          [ngClass]="{
-            'open-back-top ': isTicketOpened === true,
-            'close-back-top': isTicketOpened === false
-          }"
-        >
+        <div class="back-top-envelope">
           <div class="interior-border-container">
             <div class="interior-border"></div>
           </div>
