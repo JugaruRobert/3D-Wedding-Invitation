@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { EnvelopeTextPipe } from "../utils/envelopeTextPipe";
+import { EnvelopeTextPipe } from "../Utils/envelopeTextPipe";
 
 @Component({
   selector: "wedding-invitation",

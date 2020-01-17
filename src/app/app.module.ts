@@ -9,7 +9,7 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { FlipModule } from "ngx-flip";
 import { CustomHelperComponent } from "./custom-helper/custom-helper.component";
-import { EnvelopeTextPipe } from "./utils/envelopeTextPipe";
+import { EnvelopeTextPipe } from "./Utils/envelopeTextPipe";
 
 @NgModule({
   declarations: [

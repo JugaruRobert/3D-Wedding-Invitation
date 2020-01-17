@@ -37,7 +37,7 @@ body {
 
 body {
   margin: 0;
-  cursor: url("app/images/plane.png"), auto;
+  cursor: url("app/Images/plane.png"), auto;
   overflow: hidden;
 }
 
@@ -46,7 +46,7 @@ body:before {
     background: linear-gradient(
                      rgba(20,20,20, .65), 
                      rgba(20,20,20, .65  )),
-                     url("./app/images/background-black.png")
+                     url("./app/Images/background-black.png")
                      no-repeat top left fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;

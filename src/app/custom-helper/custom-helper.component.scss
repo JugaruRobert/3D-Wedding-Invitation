@@ -14,7 +14,7 @@
   .plane {
     @extend %animation-set;
     animation-delay: 1s;
-    background-image: url("../images/plane-light.png");
+    background-image: url("../Images/plane-light.png");
   }
   .circle1 {
     @extend %circle;
