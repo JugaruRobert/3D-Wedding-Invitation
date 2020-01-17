@@ -13,32 +13,32 @@
   position: relative;
   .plane {
     @extend %animation-set;
-    animation-delay: 2s;
+    animation-delay: 1s;
     background-image: url("../Images/plane-light.png");
   }
   .circle1 {
     @extend %circle;
     @extend %animation-set;
-    animation-delay: 3s;
+    animation-delay: 1.5s;
   }
   .circle2 {
     @extend %circle;
     @extend %animation-set;
-    animation-delay: 4s;
+    animation-delay: 2s;
   }
   .circle3 {
     @extend %circle;
     @extend %animation-set;
-    animation-delay: 5s;
+    animation-delay: 2.5s;
   }
   .circle4 {
     @extend %circle;
     @extend %animation-set;
-    animation-delay: 6s;
+    animation-delay: 3s;
   }
   .text {
     @extend %animation-set;
-    animation-delay: 7s;
+    animation-delay: 3.5s;
     color: #f3f3f3;
     font-weight: 500;
     text-align: left;
