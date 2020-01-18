@@ -121,6 +121,11 @@ export class WeddingInvitation implements OnInit {
     var envelopeTextPipe = new EnvelopeTextPipe();
     var text = envelopeTextPipe.transform(location.pathname);
     
+    if(text.length <= 20)
+    {
+      this.envelopeTextFontSize = defaultSize;
+      return;
+    }
     var maxWidth = this.computeMaxWidth();
     this.envelopeTextFontSize = Math.ceil(maxWidth / text.length * (defaultSize / (maxWidth / 20)))+0.5;
   }
