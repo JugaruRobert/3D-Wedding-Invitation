@@ -286,8 +286,8 @@
 .inviteText {
   font-family: "Parisienne", cursive;
   font-size: 40px;
-  padding-bottom: 24px;
-  padding-right: 126px;
+  padding-bottom: calc(100%*0.37/12);
+  padding-right: calc(100%/6.34);
   font-weight: 900;
   text-transform: capitalize;
   transition: transform 1s;

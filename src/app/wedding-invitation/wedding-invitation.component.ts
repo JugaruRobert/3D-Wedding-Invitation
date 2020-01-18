@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, HostListener } from "@angular/core";
 import { EnvelopeTextPipe } from "../Utils/envelopeTextPipe";
 
 @Component({
@@ -109,16 +109,34 @@ export class WeddingInvitation implements OnInit {
     this.setClickHere("clickHereTicket", 0);
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event)
+  {
+    this.computeEnvelopeFontSize();
+  }
+
   computeEnvelopeFontSize() {
+    var defaultSize = this.computeDefaultTextSize();
+
     var envelopeTextPipe = new EnvelopeTextPipe();
     var text = envelopeTextPipe.transform(location.pathname);
-    if (text.length <= this.TEXT_BASE_LENGTH)
-      this.envelopeTextFontSize = this.TEXT_BASE_SIZE;
-    else {
-      var textDifference = text.length - this.TEXT_BASE_LENGTH;
-      this.envelopeTextFontSize =
-        this.TEXT_BASE_SIZE - textDifference - textDifference / 2;
-    }
+    
+    var maxWidth = this.computeMaxWidth();
+    this.envelopeTextFontSize = Math.ceil(maxWidth / text.length * (defaultSize / (maxWidth / 20)))+0.5;
+  }
+
+  computeMaxWidth() {
+    if(window.innerWidth >= 950)
+      return 510;
+    
+    return 80/100 * window.innerWidth;
+  }
+
+  computeDefaultTextSize() {
+    if(window.innerWidth >= 950)
+      return 40;
+    
+    return (80/100 * window.innerWidth) / 20;
   }
 
   toggleAll() {
