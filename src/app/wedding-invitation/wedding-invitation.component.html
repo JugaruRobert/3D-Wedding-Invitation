@@ -11,7 +11,7 @@
     <a
       href="https://goo.gl/maps/9QFmWcgbhuqZY3tf6"
       target="_blank"
-      matTooltip="Locatie Restaurant"
+      matTooltip="Locație Restaurant"
       matTooltipPosition="left"
       ><div class="action-button location"></div
     ></a>
@@ -88,9 +88,12 @@
     #toggleButton
     mat-icon-button
     class="flipButton"
-    (click)="onFlipClick()"
-  >
-    <mat-icon>favorite</mat-icon>
+    (click)="onFlipClick()">
+    <mat-icon  
+      class="flipIcon"
+      matTooltip="Rotește"
+      matTooltipPosition="left"
+    ></mat-icon>
     <div class="click-here-container">
       <app-custom-helper
         [clickHere]="
