@@ -9,20 +9,23 @@
 >
   <div class="action-buttons">
     <a
+      class="background-icon location-background"
       href="https://goo.gl/maps/9QFmWcgbhuqZY3tf6"
       target="_blank"
-      matTooltip="Locație Restaurant"
+      matTooltip="Locatie Restaurant"
       matTooltipPosition="left"
       ><div class="action-button location"></div
     ></a>
-    <div
-      (click)="toggleAll()"
-      class="action-button background-flip"
-      matTooltip="{{
-        showInvitation ? 'Ascunde Invitatia' : 'Arata Invitatia'
-      }}"
-      matTooltipPosition="left"
-    ></div>
+    <div class="background-icon background-icon-background">
+      <div
+        (click)="toggleAll()"
+        class="action-button background-flip"
+        matTooltip="{{
+          showInvitation ? 'Ascunde Invitatia' : 'Arata Invitatia'
+        }}"
+        matTooltipPosition="left"
+      ></div>
+    </div>
   </div>
   <div class="invite-container">
     <div class="click-here-container-envelope">
@@ -88,8 +91,9 @@
     #toggleButton
     mat-icon-button
     class="flipButton"
-    (click)="onFlipClick()">
-    <mat-icon  
+    (click)="onFlipClick()"
+  >
+    <mat-icon
       class="flipIcon"
       matTooltip="Rotește"
       matTooltipPosition="left"

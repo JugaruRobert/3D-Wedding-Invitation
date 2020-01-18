@@ -11,7 +11,7 @@
   height: 100%;
   justify-content: center;
   box-sizing: border-box;
-  overflow:overlay;
+  overflow: overlay;
 }
 
 @keyframes slideDown {
@@ -202,11 +202,11 @@
 
   .click-here-container {
     top: 58%;
-    left: 12%;
+    left: 5%;
   }
 
   .click-here-container-envelope {
-    margin-left: -425px;
+    margin-left: -407px;
     margin-top: 8%;
   }
   .click-here-container-ticket {
@@ -239,16 +239,16 @@
 
   .click-here-container {
     top: 62%;
-    left: 27%;
+    left: 5%;
   }
 
   .click-here-container-envelope {
-    margin-left: calc(80vw / 2 * (-1) - 12px);
+    margin-left: calc(80vw / 2 * (-1) - 3px);
     margin-top: 12%;
   }
 
   .click-here-container-ticket {
-    margin-left: calc(80vw / 2 * (-1) - 12px);
+    margin-left: calc(80vw / 2 * (-1) - 3px);
     margin-top: 7%;
   }
 }
@@ -256,14 +256,14 @@
 @media screen and (max-width: 700px) {
   .click-here-container {
     top: 61%;
-    left: 33%;
+    left: 20%;
   }
   .click-here-container-envelope {
-    margin-left: calc(80vw / 2 * (-1) - 10px) !important;
+    margin-left: calc(80vw / 2 * (-1) - 2px) !important;
     margin-top: 12%;
   }
   .click-here-container-ticket {
-    margin-left: calc(80vw / 2 * (-1) - 10px) !important;
+    margin-left: calc(80vw / 2 * (-1) - 2px) !important;
     margin-top: 8%;
   }
 }
@@ -288,8 +288,8 @@
 .inviteText {
   font-family: "Parisienne", cursive;
   font-size: 40px;
-  padding-bottom: calc(100%*0.37/12);
-  padding-right: calc(100%/6.34);
+  padding-bottom: calc(100% * 0.37 / 12);
+  padding-right: calc(100% / 6.34);
   font-weight: 900;
   text-transform: capitalize;
   transition: transform 1s;
@@ -386,11 +386,11 @@
 }
 
 mat-icon {
-  background-image:url("../Images/flip.png");
+  background-image: url("../Images/flip.png");
   background-size: cover;
   height: 30px;
   width: 30px;
-  position: absolute;
+  position: relative;
 }
 
 .flipIcon:before {
@@ -401,8 +401,8 @@ mat-icon {
   width: 45px;
   height: 45px;
   position: absolute;
-  left: -7px;
-  top: -7px;
+  left: -7.5px;
+  top: -8px;
   z-index: -1;
 }
 
@@ -419,31 +419,40 @@ mat-icon {
   position: absolute;
   top: 0;
   right: 0;
+  left: 0;
   display: flex;
-  padding: 10px;
-  .action-button {
-    @media screen and (max-width: 660px) {
-      width: 20px;
-      height: 20px;
-      background-size: 20px 20px;
-    }
-    @media screen and (min-width: 660px) {
-      width: calc(100vw / 33);
-      height: calc(100vw / 33);
-      background-size: calc(100vw / 33) calc(100vw / 33);
-    }
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  .background-icon {
+    background-color: #f3f3f3;
+    border-radius: 50%;
+    opacity: 0;
+    animation: fadeInIconBackground 1.5s ease-in forwards;
+    animation-delay: 2s;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 21;
+    .action-button {
+      position: relative;
+      width: 30px;
+      height: 30px;
+      background-size: 30px 30px;
+      cursor: url("../Images/heart.png"), auto;
 
-    cursor: url("../Images/heart.png"), auto;
-    &.background-flip {
-      background-image: url("../Images/background.png");
-      opacity: 0;
-      animation: fadeIn 1.5s ease-in forwards;
-      animation-delay: 2s;
-      z-index: 21;
-    }
-    &.location {
-      background-image: url("../Images/location.png");
-      margin-right: 15px;
+      &.background-flip {
+        background-image: url("../Images/background-icon.png");
+        opacity: 0;
+        animation: fadeIn 1.5s ease-in forwards;
+        animation-delay: 2s;
+        z-index: 21;
+      }
+      &.location {
+        background-image: url("../Images/location-icon.png");
+      }
     }
   }
 }
@@ -454,6 +463,9 @@ mat-icon {
   .flipButton {
     animation: fadeOut 1.5s ease-in forwards;
   }
+  .location-background {
+    animation: fadeOutIconBackground 1.5s ease-in forwards;
+  }
 }
 
 .show-all {
@@ -462,6 +474,11 @@ mat-icon {
   .flipButton {
     opacity: 0;
     animation: fadeIn 1.5s ease-in forwards;
+    animation-delay: 2s;
+  }
+  .location-background {
+    opacity: 0;
+    animation: fadeInIconBackground 1.5s ease-in forwards;
     animation-delay: 2s;
   }
 }
@@ -478,6 +495,24 @@ mat-icon {
 @keyframes fadeOut {
   from {
     opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInIconBackground {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+
+@keyframes fadeOutIconBackground {
+  from {
+    opacity: 0.8;
   }
   to {
     opacity: 0;
