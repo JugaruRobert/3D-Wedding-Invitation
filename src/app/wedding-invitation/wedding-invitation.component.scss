@@ -19,13 +19,13 @@
     padding-top: 0;
   }
   100% {
-    padding-top: 40vh;
+    padding-top: 30vh;
   }
 }
 
 @keyframes slideUp {
   0% {
-    padding-top: 40vh;
+    padding-top: 30vh;
   }
   100% {
     padding-top: 0;
@@ -265,6 +265,44 @@
   .click-here-container-ticket {
     margin-left: calc(80vw / 2 * (-1) - 2px) !important;
     margin-top: 8%;
+  }
+
+  @keyframes slideDown {
+    0% {
+      padding-top: 0;
+    }
+    100% {
+      padding-top: 20vh;
+    }
+  }
+  
+  @keyframes slideUp {
+    0% {
+      padding-top: 20vh;
+    }
+    100% {
+      padding-top: 0;
+    }
+  }
+}
+
+@media screen and (min-width:700px) and (max-width: 830px) {
+  @keyframes slideDown {
+    0% {
+      padding-top: 0;
+    }
+    100% {
+      padding-top: 30vh;
+    }
+  }
+  
+  @keyframes slideUp {
+    0% {
+      padding-top: 30vh;
+    }
+    100% {
+      padding-top: 0;
+    }
   }
 }
 
