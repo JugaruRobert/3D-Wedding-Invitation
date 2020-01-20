@@ -134,10 +134,7 @@ export class WeddingInvitation implements OnInit {
       return;
 
     this.showInvitation = !this.showInvitation;
-    if(this.showInvitation)
-      this.setAnimationStarted(3500);
-    else
-      this.setAnimationStarted(1500);
+    this.setAnimationStarted(3500);
   }
 
   @HostListener('window:resize', ['$event'])
