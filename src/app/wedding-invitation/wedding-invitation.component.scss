@@ -65,17 +65,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   transition: transform 1s, box-shadow 1s;
-
-  &:hover {
-    transform: rotateX(20deg) translateY(-5%);
-    box-shadow: 0 13px 10px -6px black;
-
-    .inviteText {
-      transform: rotateX(20deg) translateY(-5%);
-    }
-  }
 }
 
 .hideText {
@@ -213,6 +203,26 @@
     margin-left: -425px;
     margin-top: 6%;
   }
+
+  .top-envelope {
+    &:hover {
+      transform: rotateX(20deg) translateY(-5%);
+      box-shadow: 0 13px 10px -6px black;
+
+      .inviteText {
+        transform: rotateX(20deg) translateY(-5%);
+      }
+    }
+  }
+
+  .flip-ticket {
+    &.can-hover-ticket {
+      transition: transform 1s;
+      &:hover {
+        transform: translateY(-5%);
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 950px) {
@@ -339,13 +349,6 @@
   height: 100%;
   position: relative;
   z-index: 11;
-
-  &.can-hover-ticket {
-    transition: transform 1s;
-    &:hover {
-      transform: translateY(-5%);
-    }
-  }
 
   .flip-ticket-content {
     display: flex;
