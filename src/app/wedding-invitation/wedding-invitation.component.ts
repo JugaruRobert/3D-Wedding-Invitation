@@ -15,6 +15,7 @@ export class WeddingInvitation implements OnInit {
   envelopeText: string = "";
   envelopeTextFontSize: number = 40;
   showInvitation = true;
+  isAnimationInProgress = false;
 
   TEXT_BASE_LENGTH: number = 20;
   TEXT_BASE_SIZE: number = 40;
@@ -71,20 +72,33 @@ export class WeddingInvitation implements OnInit {
     }
   }
 
+  setAnimationStarted(animationDuration) {
+    this.isAnimationInProgress = true;
+    setTimeout(() => (this.isAnimationInProgress = false), animationDuration);
+  }
+
   toggleEnvelope() {
+    if(this.isAnimationInProgress)
+      return;
+
     if (this.isTicketOpened) {
       this.toggleTicket();
       setTimeout(() => {
         this.isOpened = !this.isOpened;
+        this.setAnimationStarted(1000);
         this.afterToggleEnvelope();
       }, 1100);
     } else {
       this.isOpened = !this.isOpened;
+      this.setAnimationStarted(1000);
       this.afterToggleEnvelope();
     }
   }
 
   onFlipClick() {
+    if(this.isAnimationInProgress)
+      return;
+
     if (this.isOpened) {
       if (this.isTicketOpened) {
         this.flipTicket = !this.flipTicket;
@@ -101,12 +115,29 @@ export class WeddingInvitation implements OnInit {
   }
 
   toggleTicket() {
+    if(this.isAnimationInProgress)
+      return;
+
     this.isTicketOpened = !this.isTicketOpened;
+    this.setAnimationStarted(1100);
+
     this.isTicketOpened
       ? (this.hoverTicket = false)
       : setTimeout(() => (this.hoverTicket = true), 1300);
+
     this.setClickHere("clickHereTopTicket", 2);
     this.setClickHere("clickHereTicket", 0);
+  }
+
+  toggleAll() {
+    if(this.isAnimationInProgress)
+      return;
+
+    this.showInvitation = !this.showInvitation;
+    if(this.showInvitation)
+      this.setAnimationStarted(3500);
+    else
+      this.setAnimationStarted(1500);
   }
 
   @HostListener('window:resize', ['$event'])
@@ -142,9 +173,5 @@ export class WeddingInvitation implements OnInit {
       return 40;
     
     return (80/100 * window.innerWidth) / 20;
-  }
-
-  toggleAll() {
-    this.showInvitation = !this.showInvitation;
   }
 }
