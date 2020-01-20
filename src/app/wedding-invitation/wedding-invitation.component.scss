@@ -107,7 +107,12 @@
 }
 
 .open {
-  animation: flipOpen 1s ease-in forwards alternate;
+  @media screen and (min-width: 950px) {
+    animation: flipOpen 1s ease-in forwards alternate;
+  }
+  @media screen and (max-width: 950px) {
+    animation: flipOpenMobile 1s ease-in forwards alternate;
+  }
 }
 
 .close {
@@ -117,6 +122,26 @@
 @keyframes flipOpen {
   0% {
     transform: rotateX(20deg) translateY(-5%);
+    transform-origin: center top;
+    background-image: url("../Images/plicfata.PNG");
+  }
+  58% {
+    background-image: url("../Images/plicfata.PNG");
+  }
+  63% {
+    background-image: url("../Images/plic-spate-sus.PNG");
+  }
+  100% {
+    transform: rotateX(180deg);
+    transform-origin: center top;
+    background-image: url("../Images/plic-spate-sus.PNG");
+    z-index: 1;
+  }
+}
+
+@keyframes flipOpenMobile {
+  0% {
+    transform: rotateX(0) translateY(0%);
     transform-origin: center top;
     background-image: url("../Images/plicfata.PNG");
   }
@@ -285,7 +310,7 @@
       padding-top: 20vh;
     }
   }
-  
+
   @keyframes slideUp {
     0% {
       padding-top: 20vh;
@@ -296,7 +321,7 @@
   }
 }
 
-@media screen and (min-width:700px) and (max-width: 830px) {
+@media screen and (min-width: 700px) and (max-width: 830px) {
   @keyframes slideDown {
     0% {
       padding-top: 0;
@@ -305,7 +330,7 @@
       padding-top: 30vh;
     }
   }
-  
+
   @keyframes slideUp {
     0% {
       padding-top: 30vh;
