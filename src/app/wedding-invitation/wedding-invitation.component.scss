@@ -501,7 +501,9 @@ mat-icon {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 21;
+    &.background-icon-background {
+      z-index: 21;
+    }
     .action-button {
       position: relative;
       width: 30px;
@@ -518,6 +520,7 @@ mat-icon {
       }
       &.location {
         background-image: url("../Images/location-icon.png");
+        z-index: 1;
       }
     }
   }
