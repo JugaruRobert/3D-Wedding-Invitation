@@ -62,6 +62,7 @@
   position: absolute;
   z-index: 10;
   cursor: url("../Images/heart.png"), auto;
+  cursor: url("../Images/heart.cur"), auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -385,6 +386,7 @@
 .ticket {
   background-repeat: no-repeat;
   cursor: url("../Images/heart.png"), auto;
+  cursor: url("../Images/heart.cur"), auto;
   top: 0%;
 
   &.ticket-front {
@@ -449,6 +451,7 @@
   height: 100px;
   margin-top: -8px;
   cursor: url("../Images/heart.png"), auto;
+  cursor: url("../Images/heart.cur"), auto;
 }
 
 mat-icon {
@@ -490,6 +493,8 @@ mat-icon {
   padding: 24px;
   display: flex;
   justify-content: space-between;
+  cursor: url("../Images/heart.cur"), auto;
+
   .background-icon {
     background-color: #f3f3f3;
     border-radius: 50%;
@@ -501,6 +506,7 @@ mat-icon {
     display: flex;
     justify-content: center;
     align-items: center;
+
     &.background-icon-background {
       z-index: 21;
     }
@@ -510,6 +516,7 @@ mat-icon {
       height: 30px;
       background-size: 30px 30px;
       cursor: url("../Images/heart.png"), auto;
+      cursor: url("../Images/heart.cur"), auto;
 
       &.background-flip {
         background-image: url("../Images/background-icon.png");
