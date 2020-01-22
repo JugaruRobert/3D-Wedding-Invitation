@@ -414,7 +414,7 @@
     margin-top: 6%;
   }
 
-  .top-envelope {
+  .top-envelope.can-hover-envelope {
     &:hover {
       -webkit-transform: rotateX(20deg) translateY(-5%);
       transform: rotateX(20deg) translateY(-5%);
@@ -941,4 +941,8 @@ mat-icon {
   to {
     opacity: 0;
   }
+}
+
+.hide {
+  visibility: hidden;
 }
