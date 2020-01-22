@@ -226,8 +226,8 @@
     background-image: url("../Images/plic-spate-sus.PNG");
   }
   100% {
-    -webkit-transform: rotateX(180deg);
-    transform: rotateX(180deg);
+    -webkit-transform: rotateX(180deg) translateY(-3px);
+    transform: rotateX(180deg) translateY(-3px);
     -webkit-transform-origin: center top;
     transform-origin: center top;
     background-image: url("../Images/plic-spate-sus.PNG");
@@ -250,8 +250,8 @@
     background-image: url("../Images/plic-spate-sus.PNG");
   }
   100% {
-    -webkit-transform: rotateX(180deg);
-    transform: rotateX(180deg);
+    -webkit-transform: rotateX(180deg) translateY(-3px);
+    transform: rotateX(180deg) translateY(-3px);
     -webkit-transform-origin: center top;
     transform-origin: center top;
     background-image: url("../Images/plic-spate-sus.PNG");
@@ -274,8 +274,8 @@
     background-image: url("../Images/plic-spate-sus.PNG");
   }
   100% {
-    -webkit-transform: rotateX(180deg);
-    transform: rotateX(180deg);
+    -webkit-transform: rotateX(180deg) translateY(-3px);
+    transform: rotateX(180deg) translateY(-3px);
     -webkit-transform-origin: center top;
     transform-origin: center top;
     background-image: url("../Images/plic-spate-sus.PNG");
@@ -298,8 +298,8 @@
     background-image: url("../Images/plic-spate-sus.PNG");
   }
   100% {
-    -webkit-transform: rotateX(180deg);
-    transform: rotateX(180deg);
+    -webkit-transform: rotateX(180deg) translateY(-3px);
+    transform: rotateX(180deg) translateY(-3px);
     -webkit-transform-origin: center top;
     transform-origin: center top;
     background-image: url("../Images/plic-spate-sus.PNG");
@@ -639,11 +639,19 @@
 }
 
 .ticket-open {
+  .ticket {
+    -webkit-animation: openTicketShadow 1.1s ease-in forwards;
+    animation: openTicketShadow 1.1s ease-in forwards;
+  }
   -webkit-animation: openTicket 1.1s ease-in forwards;
   animation: openTicket 1.1s ease-in forwards;
 }
 
 .ticket-close {
+  .ticket {
+    -webkit-animation: closeTicketShadow 1.1s ease-in forwards;
+    animation: closeTicketShadow 1.1s ease-in forwards;
+  }
   -webkit-animation: closeTicket 1.1s ease-in forwards;
   animation: closeTicket 1.1s ease-in forwards;
 }
@@ -654,16 +662,10 @@
   }
   50% {
     top: -27%;
-    -webkit-filter: drop-shadow(1px 1px 13px black)
-      drop-shadow(1px 1px 7px black);
-    filter: drop-shadow(1px 1px 13px black) drop-shadow(1px 1px 7px black);
   }
   100% {
     top: 0%;
     z-index: 13;
-    -webkit-filter: drop-shadow(1px 1px 13px black)
-      drop-shadow(1px 1px 7px black);
-    filter: drop-shadow(1px 1px 13px black) drop-shadow(1px 1px 7px black);
   }
 }
 
@@ -673,13 +675,41 @@
   }
   50% {
     top: -27%;
+  }
+  100% {
+    top: 0%;
+    z-index: 13;
+  }
+}
+
+@-webkit-keyframes openTicketShadow {
+  0% {
+    -webkit-filter: none;
+    filter: none;
+  }
+  50% {
     -webkit-filter: drop-shadow(1px 1px 13px black)
       drop-shadow(1px 1px 7px black);
     filter: drop-shadow(1px 1px 13px black) drop-shadow(1px 1px 7px black);
   }
   100% {
-    top: 0%;
-    z-index: 13;
+    -webkit-filter: drop-shadow(1px 1px 13px black)
+      drop-shadow(1px 1px 7px black);
+    filter: drop-shadow(1px 1px 13px black) drop-shadow(1px 1px 7px black);
+  }
+}
+
+@keyframes openTicketShadow {
+  0% {
+    -webkit-filter: none;
+    filter: none;
+  }
+  50% {
+    -webkit-filter: drop-shadow(1px 1px 13px black)
+      drop-shadow(1px 1px 7px black);
+    filter: drop-shadow(1px 1px 13px black) drop-shadow(1px 1px 7px black);
+  }
+  100% {
     -webkit-filter: drop-shadow(1px 1px 13px black)
       drop-shadow(1px 1px 7px black);
     filter: drop-shadow(1px 1px 13px black) drop-shadow(1px 1px 7px black);
@@ -690,9 +720,6 @@
   0% {
     top: 0%;
     z-index: 13;
-    -webkit-filter: drop-shadow(1px 1px 13px black)
-      drop-shadow(1px 1px 7px black);
-    filter: drop-shadow(1px 1px 13px black) drop-shadow(1px 1px 7px black);
   }
   50% {
     top: -27%;
@@ -701,8 +728,6 @@
   100% {
     top: 0%;
     z-index: 11;
-    -webkit-filter: none;
-    filter: none;
   }
 }
 
@@ -710,9 +735,6 @@
   0% {
     top: 0%;
     z-index: 13;
-    -webkit-filter: drop-shadow(1px 1px 13px black)
-      drop-shadow(1px 1px 7px black);
-    filter: drop-shadow(1px 1px 13px black) drop-shadow(1px 1px 7px black);
   }
   50% {
     top: -27%;
@@ -721,6 +743,28 @@
   100% {
     top: 0%;
     z-index: 11;
+  }
+}
+
+@-webkit-keyframes closeTicketShadow {
+  0% {
+    -webkit-filter: drop-shadow(1px 1px 13px black)
+      drop-shadow(1px 1px 7px black);
+    filter: drop-shadow(1px 1px 13px black) drop-shadow(1px 1px 7px black);
+  }
+  100% {
+    -webkit-filter: none;
+    filter: none;
+  }
+}
+
+@keyframes closeTicketShadow {
+  0% {
+    -webkit-filter: drop-shadow(1px 1px 13px black)
+      drop-shadow(1px 1px 7px black);
+    filter: drop-shadow(1px 1px 13px black) drop-shadow(1px 1px 7px black);
+  }
+  100% {
     -webkit-filter: none;
     filter: none;
   }
