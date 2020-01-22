@@ -16,6 +16,7 @@ export class WeddingInvitation implements OnInit {
   envelopeTextFontSize: number = 40;
   showInvitation = true;
   isAnimationInProgress = false;
+  applyDropShadow = false;
 
   TEXT_BASE_LENGTH: number = 20;
   TEXT_BASE_SIZE: number = 40;
@@ -105,10 +106,14 @@ export class WeddingInvitation implements OnInit {
         this.setClickHere("clickHereTicket", 2);
       } else {
         this.toggleEnvelope();
-        setTimeout(() => (this.flipDiv = !this.flipDiv), 1300);
+        setTimeout(() => {
+          this.flipDiv = !this.flipDiv;
+          setTimeout(() => (this.applyDropShadow = !this.applyDropShadow), 300);
+        }, 1300);
       }
     } else {
       this.flipDiv = !this.flipDiv;
+      setTimeout(() => (this.applyDropShadow = !this.applyDropShadow), 300);
       this.setClickHere("clickHereEnvelope", 2);
       this.setClickHere("clickHereTopEnvelope", 0);
     }

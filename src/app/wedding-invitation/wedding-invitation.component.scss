@@ -1,5 +1,3 @@
-/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
-
 .container {
   &.open-envelope {
     -webkit-animation: slideDown 1.1s ease-in forwards;
@@ -88,16 +86,12 @@
 .back-envelope {
   background-image: url("../Images/plic-spate.PNG");
   background-repeat: no-repeat;
-  position: absolute;
-  z-index: 10;
-  -webkit-perspective: 1800px;
-  perspective: 1800px;
+}
+
+.drop-shadow {
   -webkit-filter: drop-shadow(1px 1px 22px black)
-    drop-shadow(-1px -1px 22px black);
+  drop-shadow(-1px -1px 22px black);
   filter: drop-shadow(1px 1px 22px black) drop-shadow(-1px -1px 22px black);
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
 }
 
 // Top Envelope
@@ -364,11 +358,8 @@
   position: absolute;
   background-image: url("../Images/plic-spate-sus.PNG");
   background-repeat: no-repeat;
-
   display: -webkit-box;
-
   display: -ms-flexbox;
-
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
