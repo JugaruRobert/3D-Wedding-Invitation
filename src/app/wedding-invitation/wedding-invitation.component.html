@@ -45,7 +45,8 @@
           (click)="toggleEnvelope()"
           [ngClass]="{
             open: isOpened === true,
-            close: isOpened === false
+            close: isOpened === false,
+            'can-hover-envelope': !isOpened
           }"
         >
           <span
@@ -69,7 +70,8 @@
             [ngClass]="{
               'ticket-open': isTicketOpened === true,
               'ticket-close': isTicketOpened === false,
-              'can-hover-ticket': hoverTicket === true
+              'can-hover-ticket': hoverTicket === true,
+              hide: !isOpened
             }"
             (click)="toggleTicket()"
           >
