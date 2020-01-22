@@ -1,43 +1,30 @@
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
-@import "~@angular/material/theming";
-// Plus imports for other components in your app.
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
 
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
+@import "~@angular/material/theming";
+
 @include mat-core();
 
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
 $WeddingInvite-primary: mat-palette($mat-indigo);
 $WeddingInvite-accent: mat-palette($mat-pink, A200, A100, A400);
 
-// The warn palette is optional (defaults to red).
 $WeddingInvite-warn: mat-palette($mat-red);
 
-// Create the theme object (a Sass map containing all of the palettes).
 $WeddingInvite-theme: mat-light-theme(
   $WeddingInvite-primary,
   $WeddingInvite-accent,
   $WeddingInvite-warn
 );
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
 @include angular-material-theme($WeddingInvite-theme);
 
-/* You can add global styles to this file, and also import other style files */
 html,
 body {
   height: 100%;
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; 
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 body {
@@ -50,9 +37,6 @@ body {
 body:before {
   content: "";
   background: url("./app/Images/background-black.png") no-repeat top left fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
   width: 100%;
   height: 100%;
@@ -63,6 +47,17 @@ body:before {
 
 .container:before {
   content: "";
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(20, 20, 20, 0.45)),
+    to(rgba(20, 20, 20, 0.45))
+  );
+  background: -o-linear-gradient(
+    rgba(20, 20, 20, 0.45),
+    rgba(20, 20, 20, 0.45)
+  );
   background: linear-gradient(rgba(20, 20, 20, 0.45), rgba(20, 20, 20, 0.45));
   top: 0;
   left: 0;
@@ -72,12 +67,26 @@ body:before {
 }
 
 .hide-all:before {
+  -webkit-animation: fadeOutBackground 1.5s ease-in forwards;
   animation: fadeOutBackground 1.5s ease-in forwards;
+  -webkit-animation-delay: 2s;
   animation-delay: 2s;
 }
 
 .show-all:before {
+  -webkit-animation: fadeInBackground 1.5s ease-in forwards;
   animation: fadeInBackground 1.5s ease-in forwards;
+}
+
+@-webkit-keyframes fadeInBackground {
+  from {
+    opacity: 0;
+    z-index: 20;
+  }
+  to {
+    opacity: 1;
+    z-index: 0;
+  }
 }
 
 @keyframes fadeInBackground {
@@ -88,6 +97,17 @@ body:before {
   to {
     opacity: 1;
     z-index: 0;
+  }
+}
+
+@-webkit-keyframes fadeOutBackground {
+  from {
+    opacity: 1;
+    z-index: 0;
+  }
+  to {
+    opacity: 0;
+    z-index: 20;
   }
 }
 

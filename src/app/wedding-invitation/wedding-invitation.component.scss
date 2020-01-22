@@ -1,17 +1,40 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
 .container {
   &.open-envelope {
+    -webkit-animation: slideDown 1.1s ease-in forwards;
     animation: slideDown 1.1s ease-in forwards;
   }
   &.close-envelope {
+    -webkit-animation: slideUp 1.1s ease-in forwards;
     animation: slideUp 1.1s ease-in forwards;
   }
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
   flex-flow: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   height: 100%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   overflow: overlay;
+}
+
+@-webkit-keyframes slideDown {
+  0% {
+    padding-top: 0;
+  }
+  100% {
+    padding-top: 30vh;
+  }
 }
 
 @keyframes slideDown {
@@ -20,6 +43,15 @@
   }
   100% {
     padding-top: 30vh;
+  }
+}
+
+@-webkit-keyframes slideUp {
+  0% {
+    padding-top: 30vh;
+  }
+  100% {
+    padding-top: 0;
   }
 }
 
@@ -33,12 +65,20 @@
 }
 
 .invite-container {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   width: 100%;
   padding: 0;
   margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   background-color: transparent;
   margin-bottom: 12px;
@@ -50,8 +90,13 @@
   background-repeat: no-repeat;
   position: absolute;
   z-index: 10;
+  -webkit-perspective: 1800px;
   perspective: 1800px;
+  -webkit-filter: drop-shadow(1px 1px 22px black)
+    drop-shadow(-1px -1px 22px black);
   filter: drop-shadow(1px 1px 22px black) drop-shadow(-1px -1px 22px black);
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
@@ -63,18 +108,46 @@
   z-index: 10;
   cursor: url("../Images/heart.png"), auto;
   cursor: url("../Images/heart.cur"), auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-transition: -webkit-transform 1s, -webkit-box-shadow 1s;
+  transition: -webkit-transform 1s, -webkit-box-shadow 1s;
+  -o-transition: transform 1s, box-shadow 1s;
   transition: transform 1s, box-shadow 1s;
+  transition: transform 1s, box-shadow 1s, -webkit-transform 1s,
+    -webkit-box-shadow 1s;
 }
 
 .hideText {
+  -webkit-animation: hideText 1s ease-in forwards alternate;
   animation: hideText 1s ease-in forwards alternate;
 }
 
 .showText {
+  -webkit-animation: showText 1s ease-in none alternate;
   animation: showText 1s ease-in none alternate;
+}
+
+@-webkit-keyframes hideText {
+  0% {
+    visibility: visible;
+  }
+  50% {
+    visibility: visible;
+  }
+  55% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: hidden;
+  }
 }
 
 @keyframes hideText {
@@ -89,6 +162,21 @@
   }
   100% {
     visibility: hidden;
+  }
+}
+
+@-webkit-keyframes showText {
+  0% {
+    visibility: hidden;
+  }
+  60% {
+    visibility: hidden;
+  }
+  70% {
+    visibility: visible;
+  }
+  100% {
+    visibility: visible;
   }
 }
 
@@ -109,20 +197,25 @@
 
 .open {
   @media screen and (min-width: 950px) {
+    -webkit-animation: flipOpen 1s ease-in forwards alternate;
     animation: flipOpen 1s ease-in forwards alternate;
   }
   @media screen and (max-width: 950px) {
+    -webkit-animation: flipOpenMobile 1s ease-in forwards alternate;
     animation: flipOpenMobile 1s ease-in forwards alternate;
   }
 }
 
 .close {
+  -webkit-animation: flipClose 1s ease-in none alternate;
   animation: flipClose 1s ease-in none alternate;
 }
 
-@keyframes flipOpen {
+@-webkit-keyframes flipOpen {
   0% {
+    -webkit-transform: rotateX(20deg) translateY(-5%);
     transform: rotateX(20deg) translateY(-5%);
+    -webkit-transform-origin: center top;
     transform-origin: center top;
     background-image: url("../Images/plicfata.PNG");
   }
@@ -133,7 +226,57 @@
     background-image: url("../Images/plic-spate-sus.PNG");
   }
   100% {
+    -webkit-transform: rotateX(180deg);
     transform: rotateX(180deg);
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+    background-image: url("../Images/plic-spate-sus.PNG");
+    z-index: 1;
+  }
+}
+
+@keyframes flipOpen {
+  0% {
+    -webkit-transform: rotateX(20deg) translateY(-5%);
+    transform: rotateX(20deg) translateY(-5%);
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+    background-image: url("../Images/plicfata.PNG");
+  }
+  58% {
+    background-image: url("../Images/plicfata.PNG");
+  }
+  63% {
+    background-image: url("../Images/plic-spate-sus.PNG");
+  }
+  100% {
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+    background-image: url("../Images/plic-spate-sus.PNG");
+    z-index: 1;
+  }
+}
+
+@-webkit-keyframes flipOpenMobile {
+  0% {
+    -webkit-transform: rotateX(0) translateY(0%);
+    transform: rotateX(0) translateY(0%);
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+    background-image: url("../Images/plicfata.PNG");
+  }
+  58% {
+    background-image: url("../Images/plicfata.PNG");
+  }
+  63% {
+    background-image: url("../Images/plic-spate-sus.PNG");
+  }
+  100% {
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+    -webkit-transform-origin: center top;
     transform-origin: center top;
     background-image: url("../Images/plic-spate-sus.PNG");
     z-index: 1;
@@ -142,7 +285,9 @@
 
 @keyframes flipOpenMobile {
   0% {
+    -webkit-transform: rotateX(0) translateY(0%);
     transform: rotateX(0) translateY(0%);
+    -webkit-transform-origin: center top;
     transform-origin: center top;
     background-image: url("../Images/plicfata.PNG");
   }
@@ -153,16 +298,20 @@
     background-image: url("../Images/plic-spate-sus.PNG");
   }
   100% {
+    -webkit-transform: rotateX(180deg);
     transform: rotateX(180deg);
+    -webkit-transform-origin: center top;
     transform-origin: center top;
     background-image: url("../Images/plic-spate-sus.PNG");
     z-index: 1;
   }
 }
 
-@keyframes flipClose {
+@-webkit-keyframes flipClose {
   0% {
+    -webkit-transform: rotateX(180deg);
     transform: rotateX(180deg);
+    -webkit-transform-origin: center top;
     transform-origin: center top;
     background-image: url("../Images/plic-spate-sus.PNG");
   }
@@ -173,12 +322,39 @@
     background-image: url("../Images/plicfata.PNG");
   }
   100% {
+    -webkit-transform: rotateX(0deg);
     transform: rotateX(0deg);
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+    background-image: url("../Images/plicfata.PNG");
+  }
+}
+
+@keyframes flipClose {
+  0% {
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+    background-image: url("../Images/plic-spate-sus.PNG");
+  }
+  60% {
+    background-image: url("../Images/plic-spate-sus.PNG");
+  }
+  70% {
+    background-image: url("../Images/plicfata.PNG");
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: center top;
     transform-origin: center top;
     background-image: url("../Images/plicfata.PNG");
   }
 }
 .flip-card-front {
+  -webkit-filter: drop-shadow(1px 1px 22px black)
+    drop-shadow(-1px -1px 22px black);
   filter: drop-shadow(1px 1px 22px black) drop-shadow(-1px -1px 22px black);
 }
 
@@ -189,8 +365,16 @@
   background-image: url("../Images/plic-spate-sus.PNG");
   background-repeat: no-repeat;
 
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -232,10 +416,13 @@
 
   .top-envelope {
     &:hover {
+      -webkit-transform: rotateX(20deg) translateY(-5%);
       transform: rotateX(20deg) translateY(-5%);
+      -webkit-box-shadow: 0 13px 10px -6px black;
       box-shadow: 0 13px 10px -6px black;
 
       .inviteText {
+        -webkit-transform: rotateX(20deg) translateY(-5%);
         transform: rotateX(20deg) translateY(-5%);
       }
     }
@@ -243,8 +430,14 @@
 
   .flip-ticket {
     &.can-hover-ticket {
+      -webkit-transition: -webkit-transform 1s;
+      transition: -webkit-transform 1s;
+      -o-transition: transform 1s;
       transition: transform 1s;
+      transition: transform 1s, -webkit-transform 1s;
       &:hover {
+        -webkit-transform: translateY(-5%);
+        -ms-transform: translateY(-5%);
         transform: translateY(-5%);
       }
     }
@@ -303,12 +496,30 @@
     margin-top: 8%;
   }
 
+  @-webkit-keyframes slideDown {
+    0% {
+      padding-top: 0;
+    }
+    100% {
+      padding-top: 20vh;
+    }
+  }
+
   @keyframes slideDown {
     0% {
       padding-top: 0;
     }
     100% {
       padding-top: 20vh;
+    }
+  }
+
+  @-webkit-keyframes slideUp {
+    0% {
+      padding-top: 20vh;
+    }
+    100% {
+      padding-top: 0;
     }
   }
 
@@ -323,12 +534,29 @@
 }
 
 @media screen and (min-width: 700px) and (max-width: 830px) {
+  @-webkit-keyframes slideDown {
+    0% {
+      padding-top: 0;
+    }
+    100% {
+      padding-top: 30vh;
+    }
+  }
   @keyframes slideDown {
     0% {
       padding-top: 0;
     }
     100% {
       padding-top: 30vh;
+    }
+  }
+
+  @-webkit-keyframes slideUp {
+    0% {
+      padding-top: 30vh;
+    }
+    100% {
+      padding-top: 0;
     }
   }
 
@@ -346,6 +574,7 @@
   position: absolute;
   bottom: 1px;
   z-index: 12;
+  -webkit-filter: drop-shadow(4px -4px 8px black);
   filter: drop-shadow(4px -4px 8px black);
   overflow: hidden;
 }
@@ -356,6 +585,8 @@
   width: 100%;
   height: 100%;
   background-size: inherit;
+  -webkit-transform: translateY(4px) rotate(0.2deg);
+  -ms-transform: translateY(4px) rotate(0.2deg);
   transform: translateY(4px) rotate(0.2deg);
 }
 
@@ -366,7 +597,11 @@
   padding-right: calc(100% / 6.34);
   font-weight: 900;
   text-transform: capitalize;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  -o-transition: transform 1s;
   transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
 }
 
 // Ticket
@@ -377,8 +612,14 @@
   z-index: 11;
 
   .flip-ticket-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
   }
 }
@@ -398,11 +639,32 @@
 }
 
 .ticket-open {
+  -webkit-animation: openTicket 1.1s ease-in forwards;
   animation: openTicket 1.1s ease-in forwards;
 }
 
 .ticket-close {
+  -webkit-animation: closeTicket 1.1s ease-in forwards;
   animation: closeTicket 1.1s ease-in forwards;
+}
+
+@-webkit-keyframes openTicket {
+  0% {
+    top: -5%;
+  }
+  50% {
+    top: -27%;
+    -webkit-filter: drop-shadow(1px 1px 13px black)
+      drop-shadow(1px 1px 7px black);
+    filter: drop-shadow(1px 1px 13px black) drop-shadow(1px 1px 7px black);
+  }
+  100% {
+    top: 0%;
+    z-index: 13;
+    -webkit-filter: drop-shadow(1px 1px 13px black)
+      drop-shadow(1px 1px 7px black);
+    filter: drop-shadow(1px 1px 13px black) drop-shadow(1px 1px 7px black);
+  }
 }
 
 @keyframes openTicket {
@@ -411,19 +673,25 @@
   }
   50% {
     top: -27%;
+    -webkit-filter: drop-shadow(1px 1px 13px black)
+      drop-shadow(1px 1px 7px black);
     filter: drop-shadow(1px 1px 13px black) drop-shadow(1px 1px 7px black);
   }
   100% {
     top: 0%;
     z-index: 13;
+    -webkit-filter: drop-shadow(1px 1px 13px black)
+      drop-shadow(1px 1px 7px black);
     filter: drop-shadow(1px 1px 13px black) drop-shadow(1px 1px 7px black);
   }
 }
 
-@keyframes closeTicket {
+@-webkit-keyframes closeTicket {
   0% {
     top: 0%;
     z-index: 13;
+    -webkit-filter: drop-shadow(1px 1px 13px black)
+      drop-shadow(1px 1px 7px black);
     filter: drop-shadow(1px 1px 13px black) drop-shadow(1px 1px 7px black);
   }
   50% {
@@ -433,12 +701,34 @@
   100% {
     top: 0%;
     z-index: 11;
+    -webkit-filter: none;
+    filter: none;
+  }
+}
+
+@keyframes closeTicket {
+  0% {
+    top: 0%;
+    z-index: 13;
+    -webkit-filter: drop-shadow(1px 1px 13px black)
+      drop-shadow(1px 1px 7px black);
+    filter: drop-shadow(1px 1px 13px black) drop-shadow(1px 1px 7px black);
+  }
+  50% {
+    top: -27%;
+    z-index: 11;
+  }
+  100% {
+    top: 0%;
+    z-index: 11;
+    -webkit-filter: none;
     filter: none;
   }
 }
 
 .flip-card-inner {
   position: relative;
+  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
 
@@ -480,6 +770,8 @@ mat-icon {
 }
 .click-here-container-envelope,
 .click-here-container-ticket {
+  -webkit-transform: rotate(18deg);
+  -ms-transform: rotate(18deg);
   transform: rotate(18deg);
   position: absolute;
 }
@@ -489,9 +781,13 @@ mat-icon {
   top: 0;
   right: 0;
   left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 24px;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   cursor: url("../Images/heart.cur"), auto;
 
@@ -499,12 +795,20 @@ mat-icon {
     background-color: #f3f3f3;
     border-radius: 50%;
     opacity: 0;
+    -webkit-animation: fadeInIconBackground 1.5s ease-in forwards;
     animation: fadeInIconBackground 1.5s ease-in forwards;
+    -webkit-animation-delay: 2s;
     animation-delay: 2s;
     width: 45px;
     height: 45px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 
     &.background-icon-background {
@@ -521,7 +825,9 @@ mat-icon {
       &.background-flip {
         background-image: url("../Images/background-icon.png");
         opacity: 0;
+        -webkit-animation: fadeIn 1.5s ease-in forwards;
         animation: fadeIn 1.5s ease-in forwards;
+        -webkit-animation-delay: 2s;
         animation-delay: 2s;
         z-index: 21;
       }
@@ -537,9 +843,11 @@ mat-icon {
   .action-buttons .location,
   .invite-container,
   .flipButton {
+    -webkit-animation: fadeOut 1.5s ease-in forwards;
     animation: fadeOut 1.5s ease-in forwards;
   }
   .location-background {
+    -webkit-animation: fadeOutIconBackground 1.5s ease-in forwards;
     animation: fadeOutIconBackground 1.5s ease-in forwards;
   }
 }
@@ -549,13 +857,26 @@ mat-icon {
   .invite-container,
   .flipButton {
     opacity: 0;
+    -webkit-animation: fadeIn 1.5s ease-in forwards;
     animation: fadeIn 1.5s ease-in forwards;
+    -webkit-animation-delay: 2s;
     animation-delay: 2s;
   }
   .location-background {
     opacity: 0;
+    -webkit-animation: fadeInIconBackground 1.5s ease-in forwards;
     animation: fadeInIconBackground 1.5s ease-in forwards;
+    -webkit-animation-delay: 2s;
     animation-delay: 2s;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
@@ -568,6 +889,15 @@ mat-icon {
   }
 }
 
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 @keyframes fadeOut {
   from {
     opacity: 1;
@@ -577,12 +907,30 @@ mat-icon {
   }
 }
 
+@-webkit-keyframes fadeInIconBackground {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+
 @keyframes fadeInIconBackground {
   from {
     opacity: 0;
   }
   to {
     opacity: 0.8;
+  }
+}
+
+@-webkit-keyframes fadeOutIconBackground {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 0;
   }
 }
 
