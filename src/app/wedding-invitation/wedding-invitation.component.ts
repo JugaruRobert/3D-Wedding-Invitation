@@ -18,6 +18,7 @@ export class WeddingInvitation implements OnInit {
   isAnimationInProgress = false;
   hide = true;
   applyDropShadow = false;
+  sendToBack = true;
 
   TEXT_BASE_LENGTH: number = 20;
   TEXT_BASE_SIZE: number = 40;
@@ -65,10 +66,12 @@ export class WeddingInvitation implements OnInit {
       this.setClickHere("clickHereTopTicket", 0);
       setTimeout(() => {
         this.hoverTicket = true;
-      }, 1000);
+        this.sendToBack = false;
+      }, 2000);
       this.hide = false;
     } else {
       this.hoverTicket = false;
+      this.sendToBack = true;
       this.setClickHere("clickHereTopEnvelope", 0);
       this.setClickHere("clickHereEnvelope", 0);
       this.setClickHere("clickHereTopTicket", 1);

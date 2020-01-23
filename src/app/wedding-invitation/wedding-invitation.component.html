@@ -71,7 +71,8 @@
               'ticket-open': isTicketOpened === true,
               'ticket-close': isTicketOpened === false,
               'can-hover-ticket': hoverTicket === true,
-              hide: hide
+              hide: hide,
+              'send-to-back': sendToBack
             }"
             (click)="toggleTicket()"
           >
@@ -84,7 +85,10 @@
         </div>
       </div>
       <div back class="flip-card-back">
-        <div class="back-envelope" [ngClass]="{'drop-shadow':applyDropShadow}"></div>
+        <div
+          class="back-envelope"
+          [ngClass]="{ 'drop-shadow': applyDropShadow }"
+        ></div>
       </div>
     </ngx-flip>
   </div>
