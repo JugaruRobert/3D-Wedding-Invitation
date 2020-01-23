@@ -1,0 +1,542 @@
+@-webkit-keyframes slideDown {
+  0% {
+    padding-top: 0;
+  }
+  100% {
+    padding-top: 30vh;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    padding-top: 0;
+  }
+  100% {
+    padding-top: 30vh;
+  }
+}
+
+@-webkit-keyframes slideUp {
+  0% {
+    padding-top: 30vh;
+  }
+  100% {
+    padding-top: 0;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    padding-top: 30vh;
+  }
+  100% {
+    padding-top: 0;
+  }
+}
+
+@-webkit-keyframes hideText {
+  0% {
+    visibility: visible;
+  }
+  50% {
+    visibility: visible;
+  }
+  55% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+@keyframes hideText {
+  0% {
+    visibility: visible;
+  }
+  50% {
+    visibility: visible;
+  }
+  55% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+@-webkit-keyframes showText {
+  0% {
+    visibility: hidden;
+  }
+  60% {
+    visibility: hidden;
+  }
+  70% {
+    visibility: visible;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+@keyframes showText {
+  0% {
+    visibility: hidden;
+  }
+  60% {
+    visibility: hidden;
+  }
+  70% {
+    visibility: visible;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+@-webkit-keyframes flipOpen {
+  0% {
+    -webkit-transform: rotateX(20deg) translateY(-5%);
+    transform: rotateX(20deg) translateY(-5%);
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+    background-image: url("../Images/plicfata.PNG");
+  }
+  58% {
+    background-image: url("../Images/plicfata.PNG");
+  }
+  63% {
+    background-image: url("../Images/plic-spate-sus.PNG");
+  }
+  100% {
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+    background-image: url("../Images/plic-spate-sus.PNG");
+    z-index: 1;
+  }
+}
+
+@keyframes flipOpen {
+  0% {
+    -webkit-transform: rotateX(20deg) translateY(-5%);
+    transform: rotateX(20deg) translateY(-5%);
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+    background-image: url("../Images/plicfata.PNG");
+  }
+  58% {
+    background-image: url("../Images/plicfata.PNG");
+  }
+  63% {
+    background-image: url("../Images/plic-spate-sus.PNG");
+  }
+  100% {
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+    background-image: url("../Images/plic-spate-sus.PNG");
+    z-index: 1;
+  }
+}
+
+@-webkit-keyframes flipOpenMobile {
+  0% {
+    -webkit-transform: rotateX(0) translateY(0%);
+    transform: rotateX(0) translateY(0%);
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+    background-image: url("../Images/plicfata.PNG");
+  }
+  58% {
+    background-image: url("../Images/plicfata.PNG");
+  }
+  63% {
+    background-image: url("../Images/plic-spate-sus.PNG");
+  }
+  100% {
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+    background-image: url("../Images/plic-spate-sus.PNG");
+    z-index: 1;
+  }
+}
+
+@keyframes flipOpenMobile {
+  0% {
+    -webkit-transform: rotateX(0) translateY(0%);
+    transform: rotateX(0) translateY(0%);
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+    background-image: url("../Images/plicfata.PNG");
+  }
+  58% {
+    background-image: url("../Images/plicfata.PNG");
+  }
+  63% {
+    background-image: url("../Images/plic-spate-sus.PNG");
+  }
+  100% {
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+    background-image: url("../Images/plic-spate-sus.PNG");
+    z-index: 1;
+  }
+}
+
+@-webkit-keyframes flipClose {
+  0% {
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+    background-image: url("../Images/plic-spate-sus.PNG");
+  }
+  60% {
+    background-image: url("../Images/plic-spate-sus.PNG");
+  }
+  70% {
+    background-image: url("../Images/plicfata.PNG");
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+    background-image: url("../Images/plicfata.PNG");
+  }
+}
+
+@keyframes flipClose {
+  0% {
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+    background-image: url("../Images/plic-spate-sus.PNG");
+  }
+  60% {
+    background-image: url("../Images/plic-spate-sus.PNG");
+  }
+  70% {
+    background-image: url("../Images/plicfata.PNG");
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+    background-image: url("../Images/plicfata.PNG");
+  }
+}
+
+@-webkit-keyframes openTicket {
+  0% {
+    top: -5%;
+  }
+  50% {
+    top: -27%;
+  }
+  100% {
+    top: 0%;
+    z-index: 13;
+  }
+}
+
+@keyframes openTicket {
+  0% {
+    top: -5%;
+  }
+  50% {
+    top: -27%;
+  }
+  100% {
+    top: 0%;
+    z-index: 13;
+  }
+}
+
+@-webkit-keyframes openTicketShadow {
+  0% {
+    -webkit-filter: none;
+    filter: none;
+  }
+  50% {
+    -webkit-filter: drop-shadow(1px 1px 13px black)
+      drop-shadow(1px 1px 7px black);
+    filter: drop-shadow(1px 1px 13px black) drop-shadow(1px 1px 7px black);
+  }
+  100% {
+    -webkit-filter: drop-shadow(1px 1px 13px black)
+      drop-shadow(1px 1px 7px black);
+    filter: drop-shadow(1px 1px 13px black) drop-shadow(1px 1px 7px black);
+  }
+}
+
+@keyframes openTicketShadow {
+  0% {
+    -webkit-filter: none;
+    filter: none;
+  }
+  50% {
+    -webkit-filter: drop-shadow(1px 1px 13px black)
+      drop-shadow(1px 1px 7px black);
+    filter: drop-shadow(1px 1px 13px black) drop-shadow(1px 1px 7px black);
+  }
+  100% {
+    -webkit-filter: drop-shadow(1px 1px 13px black)
+      drop-shadow(1px 1px 7px black);
+    filter: drop-shadow(1px 1px 13px black) drop-shadow(1px 1px 7px black);
+  }
+}
+
+@-webkit-keyframes closeTicket {
+  0% {
+    top: 0%;
+    z-index: 13;
+  }
+  50% {
+    top: -27%;
+    z-index: 11;
+  }
+  100% {
+    top: 0%;
+    z-index: 11;
+  }
+}
+
+@keyframes closeTicket {
+  0% {
+    top: 0%;
+    z-index: 13;
+  }
+  50% {
+    top: -27%;
+    z-index: 11;
+  }
+  100% {
+    top: 0%;
+    z-index: 11;
+  }
+}
+
+@-webkit-keyframes closeTicketShadow {
+  0% {
+    -webkit-filter: drop-shadow(1px 1px 13px black)
+      drop-shadow(1px 1px 7px black);
+    filter: drop-shadow(1px 1px 13px black) drop-shadow(1px 1px 7px black);
+  }
+  100% {
+    -webkit-filter: none;
+    filter: none;
+  }
+}
+
+@keyframes closeTicketShadow {
+  0% {
+    -webkit-filter: drop-shadow(1px 1px 13px black)
+      drop-shadow(1px 1px 7px black);
+    filter: drop-shadow(1px 1px 13px black) drop-shadow(1px 1px 7px black);
+  }
+  100% {
+    -webkit-filter: none;
+    filter: none;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadeInIconBackground {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+
+@keyframes fadeInIconBackground {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+
+@-webkit-keyframes fadeOutIconBackground {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOutIconBackground {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  @-webkit-keyframes slideDown {
+    0% {
+      padding-top: 0;
+    }
+    100% {
+      padding-top: 20vh;
+    }
+  }
+
+  @keyframes slideDown {
+    0% {
+      padding-top: 0;
+    }
+    100% {
+      padding-top: 20vh;
+    }
+  }
+
+  @-webkit-keyframes slideUp {
+    0% {
+      padding-top: 20vh;
+    }
+    100% {
+      padding-top: 0;
+    }
+  }
+
+  @keyframes slideUp {
+    0% {
+      padding-top: 20vh;
+    }
+    100% {
+      padding-top: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 700px) and (max-width: 830px) {
+  @-webkit-keyframes slideDown {
+    0% {
+      padding-top: 0;
+    }
+    100% {
+      padding-top: 30vh;
+    }
+  }
+  @keyframes slideDown {
+    0% {
+      padding-top: 0;
+    }
+    100% {
+      padding-top: 30vh;
+    }
+  }
+
+  @-webkit-keyframes slideUp {
+    0% {
+      padding-top: 30vh;
+    }
+    100% {
+      padding-top: 0;
+    }
+  }
+
+  @keyframes slideUp {
+    0% {
+      padding-top: 30vh;
+    }
+    100% {
+      padding-top: 0;
+    }
+  }
+}
+
+@-webkit-keyframes fadeInBackground {
+  from {
+    opacity: 0;
+    z-index: 20;
+  }
+  to {
+    opacity: 1;
+    z-index: 0;
+  }
+}
+
+@keyframes fadeInBackground {
+  from {
+    opacity: 0;
+    z-index: 20;
+  }
+  to {
+    opacity: 1;
+    z-index: 0;
+  }
+}
+
+@-webkit-keyframes fadeOutBackground {
+  from {
+    opacity: 1;
+    z-index: 0;
+  }
+  to {
+    opacity: 0;
+    z-index: 20;
+  }
+}
+
+@keyframes fadeOutBackground {
+  from {
+    opacity: 1;
+    z-index: 0;
+  }
+  to {
+    opacity: 0;
+    z-index: 20;
+  }
+}

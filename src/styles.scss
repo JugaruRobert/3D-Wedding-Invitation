@@ -80,50 +80,6 @@ body:before {
   animation: fadeInBackground 1.5s ease-in forwards;
 }
 
-@-webkit-keyframes fadeInBackground {
-  from {
-    opacity: 0;
-    z-index: 20;
-  }
-  to {
-    opacity: 1;
-    z-index: 0;
-  }
-}
-
-@keyframes fadeInBackground {
-  from {
-    opacity: 0;
-    z-index: 20;
-  }
-  to {
-    opacity: 1;
-    z-index: 0;
-  }
-}
-
-@-webkit-keyframes fadeOutBackground {
-  from {
-    opacity: 1;
-    z-index: 0;
-  }
-  to {
-    opacity: 0;
-    z-index: 20;
-  }
-}
-
-@keyframes fadeOutBackground {
-  from {
-    opacity: 1;
-    z-index: 0;
-  }
-  to {
-    opacity: 0;
-    z-index: 20;
-  }
-}
-
 html,
 body {
   height: 100%;
