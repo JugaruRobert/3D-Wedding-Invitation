@@ -16,6 +16,7 @@ export class WeddingInvitation implements OnInit {
   envelopeTextFontSize: number = 40;
   showInvitation = true;
   isAnimationInProgress = false;
+  hide = true;
 
   TEXT_BASE_LENGTH: number = 20;
   TEXT_BASE_SIZE: number = 40;
@@ -64,11 +65,15 @@ export class WeddingInvitation implements OnInit {
       setTimeout(() => {
         this.hoverTicket = true;
       }, 1000);
+      this.hide = false;
     } else {
       this.hoverTicket = false;
       this.setClickHere("clickHereTopEnvelope", 0);
       this.setClickHere("clickHereEnvelope", 0);
       this.setClickHere("clickHereTopTicket", 1);
+      setTimeout(() => {
+        this.hide = true;
+      }, 1000);
     }
   }
 
@@ -78,8 +83,7 @@ export class WeddingInvitation implements OnInit {
   }
 
   toggleEnvelope() {
-    if(this.isAnimationInProgress)
-      return;
+    if (this.isAnimationInProgress) return;
 
     if (this.isTicketOpened) {
       this.toggleTicket();
@@ -96,8 +100,7 @@ export class WeddingInvitation implements OnInit {
   }
 
   onFlipClick() {
-    if(this.isAnimationInProgress)
-      return;
+    if (this.isAnimationInProgress) return;
 
     if (this.isOpened) {
       if (this.isTicketOpened) {
@@ -115,8 +118,7 @@ export class WeddingInvitation implements OnInit {
   }
 
   toggleTicket() {
-    if(this.isAnimationInProgress)
-      return;
+    if (this.isAnimationInProgress) return;
 
     this.isTicketOpened = !this.isTicketOpened;
     this.setAnimationStarted(1100);
@@ -130,16 +132,14 @@ export class WeddingInvitation implements OnInit {
   }
 
   toggleAll() {
-    if(this.isAnimationInProgress)
-      return;
+    if (this.isAnimationInProgress) return;
 
     this.showInvitation = !this.showInvitation;
     this.setAnimationStarted(3500);
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event)
-  {
+  @HostListener("window:resize", ["$event"])
+  onResize(event) {
     this.computeEnvelopeFontSize();
   }
 
@@ -148,27 +148,26 @@ export class WeddingInvitation implements OnInit {
 
     var envelopeTextPipe = new EnvelopeTextPipe();
     var text = envelopeTextPipe.transform(location.pathname);
-    
-    if(text.length <= 20)
-    {
+
+    if (text.length <= 20) {
       this.envelopeTextFontSize = defaultSize;
       return;
     }
     var maxWidth = this.computeMaxWidth();
-    this.envelopeTextFontSize = Math.ceil(maxWidth / text.length * (defaultSize / (maxWidth / 20)))+0.5;
+    this.envelopeTextFontSize =
+      Math.ceil((maxWidth / text.length) * (defaultSize / (maxWidth / 20))) +
+      0.5;
   }
 
   computeMaxWidth() {
-    if(window.innerWidth >= 950)
-      return 510;
-    
-    return 80/100 * window.innerWidth;
+    if (window.innerWidth >= 950) return 510;
+
+    return (80 / 100) * window.innerWidth;
   }
 
   computeDefaultTextSize() {
-    if(window.innerWidth >= 950)
-      return 40;
-    
-    return (80/100 * window.innerWidth) / 20;
+    if (window.innerWidth >= 950) return 40;
+
+    return ((80 / 100) * window.innerWidth) / 20;
   }
 }
