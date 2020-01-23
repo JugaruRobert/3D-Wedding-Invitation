@@ -18,6 +18,7 @@ export class WeddingInvitation implements OnInit {
   isAnimationInProgress = false;
   hide = true;
   applyDropShadow = false;
+  ticketDropShadow = false;
 
   TEXT_BASE_LENGTH: number = 20;
   TEXT_BASE_SIZE: number = 40;
@@ -106,6 +107,7 @@ export class WeddingInvitation implements OnInit {
     if (this.isOpened) {
       if (this.isTicketOpened) {
         this.flipTicket = !this.flipTicket;
+        setTimeout(() => (this.ticketDropShadow = !this.ticketDropShadow), 200);
         this.setClickHere("clickHereTicket", 2);
       } else {
         this.toggleEnvelope();
