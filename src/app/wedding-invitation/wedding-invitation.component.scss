@@ -322,10 +322,15 @@
 }
 
 .ticket-open {
-  .ticket {
+  .ticket-front {
     -webkit-animation: openTicketShadow 1.1s ease-in forwards;
     animation: openTicketShadow 1.1s ease-in forwards;
   }
+
+  .ticket-drop-shadow {
+    filter: drop-shadow(1px 1px 13px black) drop-shadow(1px 1px 7px black);
+  }
+
   -webkit-animation: openTicket 1.1s ease-in forwards;
   animation: openTicket 1.1s ease-in forwards;
 }
