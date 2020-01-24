@@ -11,13 +11,16 @@ import { FlipModule } from "ngx-flip";
 import { CustomHelperComponent } from "./custom-helper/custom-helper.component";
 import { EnvelopeTextPipe } from "./Utils/envelopeTextPipe";
 import { MatTooltipModule } from "@angular/material/tooltip";
+import { HelpDialogComponent } from './help-dialog/help-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
     AppComponent,
     WeddingInvitation,
     CustomHelperComponent,
-    EnvelopeTextPipe
+    EnvelopeTextPipe,
+    HelpDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -26,9 +29,11 @@ import { MatTooltipModule } from "@angular/material/tooltip";
     MatButtonModule,
     MatIconModule,
     FlipModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatDialogModule
   ],
   providers: [EnvelopeTextPipe],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [HelpDialogComponent]
 })
 export class AppModule {}

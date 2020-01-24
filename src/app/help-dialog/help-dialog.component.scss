@@ -1,0 +1,72 @@
+.mat-dialog-content {
+    max-height: fit-content;
+    overflow: overlay;
+    max-width: 80vw;
+    max-height: 80vh;
+}
+
+.mat-dialog-container {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.close-button {
+    outline: none;
+    padding: 0;
+    margin: 0;
+    top: 0px;
+    right: -10px;
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    text-align: end;
+    cursor: pointer;
+    position: absolute;
+  }
+
+  .close-button:hover {
+    cursor: url("../Images/heart.png"), auto;
+    cursor: url("../Images/heart.cur"), auto;
+   }
+
+  .mat-dialog-title {
+    position: relative;
+    margin: 0;
+  }
+
+  .help-button-row {
+      display:flex;
+      flex-direction: row;
+      margin-bottom: 16px;
+      align-items: center;
+  }
+
+  .help-flip-button {
+      background-image: url("../Images/flip.png");
+      width: 24px;
+      height: 24px;
+      min-width: 24px;
+      min-height: 24px;
+      background-size: cover;
+  }
+
+  .help-background-button {
+    background-image: url("../Images/background-icon.png");
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    min-height: 24px;
+    background-size: cover;
+}
+
+.help-location-button {
+    background-image: url("../Images/location-icon.png");
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    min-height: 24px;
+    background-size: cover;
+}
+  .button-description {
+      margin-left: 10px;
+  }

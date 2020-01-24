@@ -1,5 +1,7 @@
 import { Component, OnInit, HostListener } from "@angular/core";
 import { EnvelopeTextPipe } from "../Utils/envelopeTextPipe";
+import { MatDialog } from '@angular/material/dialog';
+import { HelpDialogComponent } from '../help-dialog/help-dialog.component';
 
 @Component({
   selector: "wedding-invitation",
@@ -31,7 +33,7 @@ export class WeddingInvitation implements OnInit {
     clickHereTopTicket: 1
   };
 
-  constructor() {}
+  constructor(private dialog: MatDialog) {}
 
   ngOnInit() {
     this.envelopeText = location.pathname;
@@ -179,5 +181,10 @@ export class WeddingInvitation implements OnInit {
     if (window.innerWidth >= 950) return 40;
 
     return ((80 / 100) * window.innerWidth) / 20;
+  }
+
+  openHelpDialog() {
+    const dialogRef = this.dialog.open(HelpDialogComponent, {
+    });
   }
 }

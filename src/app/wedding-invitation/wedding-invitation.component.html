@@ -9,23 +9,32 @@
 >
   <div class="action-buttons">
     <a
+    class="background-icon"
+    matTooltip="Ajutor"
+    matTooltipPosition="right"
+    (click) = "openHelpDialog()"
+    ><div class="action-button help-icon"></div
+    ></a>
+    <div class="right-side-buttons">
+      <div class="background-icon background-icon-background">
+        <div
+          (click)="toggleAll()"
+          class="action-button background-flip"
+          matTooltip="{{
+            showInvitation ? 'Ascunde Invitatia' : 'Arata Invitatia'
+          }}"
+          matTooltipPosition="left"
+        ></div>
+      </div>
+      <a
       class="background-icon location-background"
       href="https://goo.gl/maps/9QFmWcgbhuqZY3tf6"
       target="_blank"
       matTooltip="Locatie Restaurant"
       matTooltipPosition="left"
       ><div class="action-button location"></div
-    ></a>
-    <div class="background-icon background-icon-background">
-      <div
-        (click)="toggleAll()"
-        class="action-button background-flip"
-        matTooltip="{{
-          showInvitation ? 'Ascunde Invitatia' : 'Arata Invitatia'
-        }}"
-        matTooltipPosition="left"
-      ></div>
-    </div>
+      ></a>
+    </div> 
   </div>
   <div class="invite-container">
     <div class="click-here-container-envelope">
