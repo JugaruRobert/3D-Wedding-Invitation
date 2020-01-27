@@ -8,13 +8,13 @@
   }"
 >
   <div class="action-buttons">
-    <a
-    class="background-icon"
-    matTooltip="Ajutor"
-    matTooltipPosition="right"
-    (click) = "openHelpDialog()"
-    ><div class="action-button help-icon"></div
-    ></a>
+    <div
+      class="background-icon location-background"
+      matTooltip="Ajutor"
+      matTooltipPosition="right"
+    >
+      <div (click)="openHelpDialog()" class="action-button help-icon"></div>
+    </div>
     <div class="right-side-buttons">
       <div class="background-icon background-icon-background">
         <div
@@ -27,14 +27,14 @@
         ></div>
       </div>
       <a
-      class="background-icon location-background"
-      href="https://goo.gl/maps/9QFmWcgbhuqZY3tf6"
-      target="_blank"
-      matTooltip="Locatie Restaurant"
-      matTooltipPosition="left"
-      ><div class="action-button location"></div
+        class="background-icon location-background"
+        href="https://goo.gl/maps/9QFmWcgbhuqZY3tf6"
+        target="_blank"
+        matTooltip="Locatie Restaurant"
+        matTooltipPosition="left"
+        ><div class="action-button location"></div
       ></a>
-    </div> 
+    </div>
   </div>
   <div class="invite-container">
     <div class="click-here-container-envelope">
@@ -89,7 +89,10 @@
               <div class="ticket ticket-front"></div>
             </div>
             <div back class="flip-ticket-content">
-              <div class="ticket ticket-back" [ngClass]="{'ticket-drop-shadow':ticketDropShadow}"></div></div
+              <div
+                class="ticket ticket-back"
+                [ngClass]="{ 'ticket-drop-shadow': ticketDropShadow }"
+              ></div></div
           ></ngx-flip>
         </div>
       </div>
