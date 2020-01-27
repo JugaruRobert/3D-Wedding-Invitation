@@ -1,26 +1,64 @@
 <h1 mat-dialog-title>
-    <div class="close-button" (click)="close()">x</div>
+  <div class="close-button" (click)="close()">x</div>
 </h1>
 <div mat-dialog-content>
-    <p class="help-row">Aceasta invitatie se poate folosi intr-o maniera similara invitatiei fizice.</p>
-    <p class="help-row">Plicul se poate deschide apasand pe partea din fata a acestuia si se poate inchide apasand pe partea de sus, situata deasupra biletului din interiorul acestuia.</p>
-    <p class="help-row">Biletul se poate scoate din plic si adauga din nou in plic apasand oriunde pe suprafata lui.</p>
-    <div class="help-row help-button-row">
-        <div class="help-flip-button"></div>
-        <div class="button-description">
-            (sub invitatie) - Roteste plicul sau biletul din interior, daca acesta este scos din plic. 
-        </div>
+  <div class="help-row">
+    <p class="help-left">Deschide Plicul</p>
+    <p>-</p>
+    <p class="help-right">
+      Apasati pe plic (oriunde)
+    </p>
+  </div>
+  <div class="help-row">
+    <p class="help-left">Deschide Invitatia</p>
+    <p>-</p>
+    <p class="help-right">
+      Apasati pe invitatie (oriunde)
+    </p>
+  </div>
+  <div class="help-row">
+    <p class="help-left">Inchide Invitatia</p>
+    <p>-</p>
+    <p class="help-right">
+      Apasati pe invitatie (oriunde)
+    </p>
+  </div>
+  <div class="help-row">
+    <p class="help-left">Inchide Plicul</p>
+    <p>-</p>
+    <p class="help-right">
+      Apasati pe partea superioara a plicului (oriunde)
+    </p>
+  </div>
+  <div class="help-row help-button-row">
+    <div class="help-left">
+      <div class="help-flip-button"></div>
+      <p class="button-description">(sub invitatie)</p>
     </div>
-    <div class="help-row help-button-row">
-        <div class="help-background-button"></div>
-        <div class="button-description">
-            (dreapta sus) - Ascunde invitatia pentru a se putea vedea mai bine pozele din fundal. De asemenea, face invitatia vizibila cand aceasta este ascunsa. 
-        </div>
+    <p>-</p>
+    <div class="help-right">
+      Roteste plicul sau biletul din interior, daca acesta este scos din plic.
     </div>
-    <div class="help-row help-button-row">
-        <div class="help-location-button"></div>
-        <div class="button-description">
-            (dreapta sus) - Arata adresa locatiei evenimentului. 
-        </div>
+  </div>
+  <div class="help-row help-button-row">
+    <div class="help-left">
+      <div class="help-background-button"></div>
+      <p class="button-description">(dreapta sus)</p>
     </div>
+    <p>-</p>
+    <div class="help-right">
+      Ascunde invitatia pentru a se putea vedea mai bine pozele din fundal. Face
+      invitatia vizibila cand aceasta este ascunsa.
+    </div>
+  </div>
+  <div class="help-row help-button-row">
+    <div class="help-left">
+      <div class="help-location-button"></div>
+      <p class="button-description">(dreapta sus)</p>
+    </div>
+    <p>-</p>
+    <div class="help-right">
+      Arata adresa locatiei evenimentului.
+    </div>
+  </div>
 </div>
