@@ -466,7 +466,7 @@
       padding-top: 0;
     }
     100% {
-      padding-top: 50vh;
+      padding-top: 32vh;
     }
   }
   @keyframes slideDown {
@@ -474,13 +474,13 @@
       padding-top: 0;
     }
     100% {
-      padding-top: 50vh;
+      padding-top: 32vh;
     }
   }
 
   @-webkit-keyframes slideUp {
     0% {
-      padding-top: 50vh;
+      padding-top: 32vh;
     }
     100% {
       padding-top: 0;
@@ -489,7 +489,44 @@
 
   @keyframes slideUp {
     0% {
-      padding-top: 50vh;
+      padding-top: 32vh;
+    }
+    100% {
+      padding-top: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 481x) and (max-height: 321px) and (orientation:landscape) {
+  @-webkit-keyframes slideDown {
+    0% {
+      padding-top: 0;
+    }
+    100% {
+      padding-top: 35vh;
+    }
+  }
+  @keyframes slideDown {
+    0% {
+      padding-top: 0;
+    }
+    100% {
+      padding-top: 35vh;
+    }
+  }
+
+  @-webkit-keyframes slideUp {
+    0% {
+      padding-top: 35vh;
+    }
+    100% {
+      padding-top: 0;
+    }
+  }
+
+  @keyframes slideUp {
+    0% {
+      padding-top: 35vh;
     }
     100% {
       padding-top: 0;
