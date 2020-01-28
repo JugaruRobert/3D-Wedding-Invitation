@@ -184,7 +184,6 @@ export class WeddingInvitation implements OnInit {
   }
 
   openHelpDialog() {
-    const dialogRef = this.dialog.open(HelpDialogComponent, {
-    });
+    this.dialog.open(HelpDialogComponent);
   }
 }
