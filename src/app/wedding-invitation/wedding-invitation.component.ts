@@ -74,7 +74,10 @@ export class WeddingInvitation implements OnInit {
       }, 2000);
       setTimeout(() => {
         this.bringInFront = true;
-      }, 50);
+        setTimeout(() => {
+          this.bringInFront = false;
+        }, 1700);
+      }, 100);
       this.hide = false;
     } else {
       this.hoverTicket = false;
@@ -85,9 +88,10 @@ export class WeddingInvitation implements OnInit {
       setTimeout(() => {
         this.hide = true;
       }, 500);
+      this.bringInFront = true;
       setTimeout(() => {
         this.bringInFront = false;
-      }, 850);
+      }, 900);
     }
   }
 
