@@ -1,7 +1,7 @@
 import { Component, OnInit, HostListener } from "@angular/core";
 import { EnvelopeTextPipe } from "../Utils/envelopeTextPipe";
-import { MatDialog } from '@angular/material/dialog';
-import { HelpDialogComponent } from '../help-dialog/help-dialog.component';
+import { MatDialog } from "@angular/material/dialog";
+import { HelpDialogComponent } from "../help-dialog/help-dialog.component";
 
 @Component({
   selector: "wedding-invitation",
@@ -22,6 +22,7 @@ export class WeddingInvitation implements OnInit {
   applyDropShadow = false;
   sendToBack = true;
   ticketDropShadow = false;
+  bringInFront = false;
 
   TEXT_BASE_LENGTH: number = 20;
   TEXT_BASE_SIZE: number = 40;
@@ -70,6 +71,7 @@ export class WeddingInvitation implements OnInit {
       setTimeout(() => {
         this.hoverTicket = true;
         this.sendToBack = false;
+        this.bringInFront = true;
       }, 2000);
       this.hide = false;
     } else {
@@ -80,7 +82,8 @@ export class WeddingInvitation implements OnInit {
       this.setClickHere("clickHereTopTicket", 1);
       setTimeout(() => {
         this.hide = true;
-      }, 1000);
+        this.bringInFront = false;
+      }, 500);
     }
   }
 

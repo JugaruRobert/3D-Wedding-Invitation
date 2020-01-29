@@ -70,7 +70,10 @@
           >
         </div>
         <div class="back-top-envelope">
-          <div class="interior-border-container">
+          <div
+            class="interior-border-container"
+            [ngClass]="{ 'bring-in-front': bringInFront }"
+          >
             <div class="interior-border"></div>
           </div>
           <ngx-flip

@@ -179,7 +179,6 @@
   }
 }
 
-
 @media screen and (max-height: 719px) and (max-width: 720px) and (min-width: 591px) and (orientation: landscape) {
   .back-envelope,
   .top-envelope,
@@ -250,7 +249,7 @@
   }
 }
 
-@media screen and (min-width: 950px){
+@media screen and (min-width: 950px) {
   .back-envelope,
   .top-envelope,
   .back-top-envelope,
@@ -348,7 +347,7 @@
   }
 }
 
-@media screen and (max-width: 700px) and (orientation:portrait){
+@media screen and (max-width: 700px) and (orientation: portrait) {
   .click-here-container {
     top: 61%;
     left: 20%;
@@ -618,6 +617,10 @@ mat-icon {
 
 .send-to-back {
   transform: translateZ(-1px);
+}
+
+.bring-in-front {
+  transform: translateZ(1px);
 }
 
 .help-icon {
