@@ -620,7 +620,15 @@ mat-icon {
 }
 
 .bring-in-front {
-  transform: translateZ(1px);
+  -webkit-animation: bringInFront 1.7s;
+  animation: bringInFront 1.7s;
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+
+.unbring-in-front {
+  -webkit-animation: unbringInFront 0.8s;
+  animation: unbringInFront 0.8s;
 }
 
 .help-icon {

@@ -72,7 +72,10 @@
         <div class="back-top-envelope">
           <div
             class="interior-border-container"
-            [ngClass]="{ 'bring-in-front': bringInFront === true }"
+            [ngClass]="{
+              'bring-in-front': bringInFront === true,
+              'unbring-in-front': bringInFront === false
+            }"
           >
             <div class="interior-border"></div>
           </div>

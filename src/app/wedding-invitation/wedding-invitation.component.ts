@@ -22,7 +22,7 @@ export class WeddingInvitation implements OnInit {
   applyDropShadow = false;
   sendToBack = true;
   ticketDropShadow = false;
-  bringInFront = false;
+  bringInFront = null;
 
   TEXT_BASE_LENGTH: number = 20;
   TEXT_BASE_SIZE: number = 40;
@@ -72,12 +72,7 @@ export class WeddingInvitation implements OnInit {
         this.hoverTicket = true;
         this.sendToBack = false;
       }, 2000);
-      setTimeout(() => {
-        this.bringInFront = true;
-        setTimeout(() => {
-          this.bringInFront = false;
-        }, 1700);
-      }, 100);
+      this.bringInFront = true;
       this.hide = false;
     } else {
       this.hoverTicket = false;
@@ -88,10 +83,7 @@ export class WeddingInvitation implements OnInit {
       setTimeout(() => {
         this.hide = true;
       }, 500);
-      this.bringInFront = true;
-      setTimeout(() => {
-        this.bringInFront = false;
-      }, 900);
+      this.bringInFront = false;
     }
   }
 
@@ -142,7 +134,7 @@ export class WeddingInvitation implements OnInit {
 
   toggleTicket() {
     if (this.isAnimationInProgress) return;
-
+    this.sendToBack = false;
     this.isTicketOpened = !this.isTicketOpened;
     this.setAnimationStarted(1100);
 

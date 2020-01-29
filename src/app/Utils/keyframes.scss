@@ -497,7 +497,7 @@
   }
 }
 
-@media screen and (max-width: 481x) and (max-height: 321px) and (orientation:landscape) {
+@media screen and (max-width: 481x) and (max-height: 321px) and (orientation: landscape) {
   @-webkit-keyframes slideDown {
     0% {
       padding-top: 0;
@@ -612,5 +612,41 @@
   to {
     opacity: 0;
     z-index: 20;
+  }
+}
+
+@-webkit-keyframes bringInFront {
+  from {
+    transform: translateZ(0px);
+  }
+  to {
+    transform: translateZ(1px);
+  }
+}
+
+@keyframes bringInFront {
+  from {
+    transform: translateZ(0px);
+  }
+  to {
+    transform: translateZ(1px);
+  }
+}
+
+@-webkit-keyframes unbringInFront {
+  from {
+    transform: translateZ(1px);
+  }
+  to {
+    transform: translateZ(0px);
+  }
+}
+
+@keyframes unbringInFront {
+  from {
+    transform: translateZ(1px);
+  }
+  to {
+    transform: translateZ(0px);
   }
 }
